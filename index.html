@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panal Refugio — Reencuentro · 13 de Noviembre · Elvis</title>
+<meta name="description" content="Panal Refugio vuelve al escenario el viernes 13 de noviembre en Elvis. Reencuentro, disco nuevo, entradas anticipadas con precio congelado.">
+
+<!-- ============================================================
+  GUÍA RÁPIDA — buscá "REEMPLAZAR" en este archivo para encontrar
+  todos los lugares donde tenés que pegar tus links reales.
+  El detalle completo de cada paso está en README.md
+============================================================ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,500&family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#12100E;
+    --bg-alt:#1B1712;
+    --bg-panel:#221C15;
+    --ember:#E8813A;
+    --ember-deep:#B4502A;
+    --paper:#F2E9DC;
+    --paper-dim:#C9BEAE;
+    --muted:#8C7F6E;
+    --line: rgba(242,233,220,0.14);
+    --radius: 2px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--paper);
+    font-family:'Instrument Sans', sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3,.display{
+    font-family:'Fraunces', serif;
+    font-weight:900;
+    line-height:1.02;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+
+  .mono{
+    font-family:'IBM Plex Mono', monospace;
+    letter-spacing:0.04em;
+  }
+
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+
+  a:focus-visible, button:focus-visible, input:focus-visible{
+    outline:2px solid var(--ember);
+    outline-offset:3px;
+  }
+
+  .wrap{
+    max-width:1120px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    text-transform:uppercase;
+    font-size:12px;
+    letter-spacing:0.22em;
+    color:var(--ember);
+  }
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(18,16,14,0.82);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:1120px; margin:0 auto; padding:16px 28px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .logo{
+    font-family:'Fraunces', serif; font-weight:900; font-size:20px;
+    text-decoration:none; color:var(--paper);
+  }
+  .logo span{color:var(--ember);}
+  .nav-links{display:flex; gap:28px; align-items:center;}
+  .nav-links a{
+    text-decoration:none; font-size:14px; color:var(--paper-dim);
+    transition:color .2s;
+  }
+  .nav-links a:hover{color:var(--ember);}
+  .nav-cta{
+    background:var(--ember); color:var(--bg) !important;
+    padding:9px 18px; border-radius:var(--radius);
+    font-weight:600; font-size:13px !important;
+  }
+  .nav-cta:hover{background:var(--paper) !important;}
+  .menu-btn{display:none; background:none; border:none; color:var(--paper); font-size:24px; cursor:pointer;}
+
+  @media (max-width:760px){
+    .nav-links{
+      position:fixed; top:64px; left:0; right:0; bottom:0;
+      background:var(--bg); flex-direction:column; justify-content:flex-start;
+      padding:32px 28px; gap:24px; transform:translateX(100%);
+      transition:transform .3s ease; border-top:1px solid var(--line);
+    }
+    .nav-links.open{transform:translateX(0);}
+    .menu-btn{display:block;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative; min-height:100vh;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center; padding:140px 24px 80px; overflow:hidden;
+  }
+  .glow{
+    position:absolute; top:50%; left:50%; width:900px; height:900px;
+    transform:translate(-50%,-50%);
+    background:radial-gradient(circle, rgba(232,129,58,0.30) 0%, rgba(232,129,58,0.10) 35%, rgba(18,16,14,0) 65%);
+    filter:blur(10px);
+    animation:pulse 5s ease-in-out infinite;
+    pointer-events:none;
+  }
+  @keyframes pulse{
+    0%,100%{opacity:0.75; transform:translate(-50%,-50%) scale(1);}
+    50%{opacity:1; transform:translate(-50%,-50%) scale(1.06);}
+  }
+  .hero-content{position:relative; z-index:2; max-width:800px;}
+  .hero h1{
+    font-size:clamp(52px, 11vw, 128px);
+    color:var(--paper);
+    text-shadow:0 0 60px rgba(232,129,58,0.35);
+  }
+  .hero .tagline{
+    margin-top:22px; font-size:clamp(16px,2.4vw,20px); color:var(--paper-dim);
+    max-width:520px; margin-left:auto; margin-right:auto;
+  }
+  .hero-meta{
+    margin-top:36px; display:flex; gap:28px; flex-wrap:wrap; justify-content:center;
+    font-family:'IBM Plex Mono', monospace; font-size:14px; color:var(--muted);
+  }
+  .hero-meta b{color:var(--paper); font-weight:600;}
+
+  .countdown{
+    margin-top:44px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap;
+  }
+  .cd-box{
+    background:var(--bg-panel); border:1px solid var(--line);
+    padding:14px 18px; min-width:76px; text-align:center; border-radius:var(--radius);
+  }
+  .cd-box .num{
+    font-family:'IBM Plex Mono', monospace; font-size:30px; font-weight:600; color:var(--ember);
+  }
+  .cd-box .lbl{
+    font-size:10px; text-transform:uppercase; letter-spacing:.14em; color:var(--muted); margin-top:4px;
+  }
+
+  .btn{
+    display:inline-block; padding:16px 34px; border-radius:var(--radius);
+    background:var(--ember); color:var(--bg); text-decoration:none;
+    font-weight:700; font-size:15px; margin-top:40px; border:none; cursor:pointer;
+    transition:transform .15s ease, background .2s ease;
+  }
+  .btn:hover{background:var(--paper); transform:translateY(-2px);}
+  .btn.ghost{
+    background:transparent; color:var(--paper); border:1px solid var(--line);
+  }
+  .btn.ghost:hover{border-color:var(--ember); color:var(--ember); background:transparent;}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:120px 0;}
+  .section-alt{background:var(--bg-alt);}
+  .section-head{max-width:640px; margin-bottom:56px;}
+  .section-head h2{font-size:clamp(34px,5vw,54px); margin-top:14px;}
+
+  /* ---------- HISTORIA ---------- */
+  .historia-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start;
+  }
+  .historia-grid p{color:var(--paper-dim); font-size:17px; margin:0 0 18px;}
+  .pull{
+    font-family:'Fraunces', serif; font-style:italic; font-weight:500;
+    font-size:26px; color:var(--paper); border-left:2px solid var(--ember);
+    padding-left:22px; margin:32px 0;
+  }
+  .photo-frame{
+    aspect-ratio:4/5; background:var(--bg-panel); border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center; text-align:center;
+    color:var(--muted); font-size:13px; padding:24px; border-radius:var(--radius);
+  }
+  @media (max-width:820px){.historia-grid{grid-template-columns:1fr;}}
+
+  /* ---------- PILARES ---------- */
+  .pilares-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:24px;
+  }
+  .pilar-card{
+    background:var(--bg-panel); border:1px solid var(--line); border-radius:var(--radius);
+    padding:32px 24px; text-align:center;
+  }
+  .pilar-photo{
+    width:88px; height:88px; margin:0 auto 20px; border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, var(--ember) 0%, var(--ember-deep) 70%);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Fraunces', serif; font-weight:700; font-size:22px; color:var(--bg);
+  }
+  .pilar-name{font-family:'Fraunces', serif; font-weight:600; font-size:19px;}
+  .pilar-role{font-size:12px; color:var(--muted); margin-top:6px; text-transform:uppercase; letter-spacing:.1em;}
+  @media (max-width:700px){.pilares-grid{grid-template-columns:1fr;}}
+
+  /* ---------- MUSICA ---------- */
+  .media-grid{display:grid; grid-template-columns:1.1fr 1fr; gap:40px;}
+  .media-embed{
+    background:var(--bg-panel); border:1px solid var(--line); border-radius:var(--radius);
+    overflow:hidden;
+  }
+  .media-embed iframe{width:100%; border:none; display:block;}
+  .link-cards{display:flex; flex-direction:column; gap:14px;}
+  .link-card{
+    display:flex; align-items:center; justify-content:space-between;
+    background:var(--bg-panel); border:1px solid var(--line); border-radius:var(--radius);
+    padding:20px 24px; text-decoration:none; transition:border-color .2s;
+  }
+  .link-card:hover{border-color:var(--ember);}
+  .link-card .name{font-weight:600; font-size:15px;}
+  .link-card .platform{font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.1em;}
+  .link-card .arrow{color:var(--ember); font-size:20px;}
+  @media (max-width:820px){.media-grid{grid-template-columns:1fr;}}
+
+  /* ---------- ENTRADAS (TICKET) ---------- */
+  .ticket{
+    position:relative;
+    background:var(--bg-panel);
+    border:1.5px dashed var(--ember-deep);
+    border-radius:6px;
+    max-width:640px; margin:0 auto;
+    display:grid; grid-template-columns:1fr;
+  }
+  .ticket-top{padding:40px 40px 30px;}
+  .ticket-row{display:flex; justify-content:space-between; align-items:flex-start; gap:20px; flex-wrap:wrap;}
+  .ticket-price{
+    font-family:'IBM Plex Mono', monospace; font-size:44px; color:var(--ember); font-weight:600;
+  }
+  .ticket-price sup{font-size:16px; color:var(--muted); margin-left:6px;}
+  .ticket-tag{
+    background:var(--ember); color:var(--bg); font-size:11px; font-weight:700;
+    text-transform:uppercase; letter-spacing:.08em; padding:5px 10px; border-radius:3px;
+  }
+  .perf{
+    position:relative; height:0; border-top:1.5px dashed var(--ember-deep); margin:0 0;
+  }
+  .perf::before, .perf::after{
+    content:""; position:absolute; top:-11px; width:22px; height:22px;
+    background:var(--bg); border-radius:50%;
+  }
+  .perf::before{left:-11px;}
+  .perf::after{right:-11px;}
+  .ticket-bottom{padding:30px 40px 40px;}
+  .pay-options{display:flex; flex-direction:column; gap:14px;}
+  .pay-btn{
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    width:100%; padding:16px; border-radius:var(--radius); border:none; cursor:pointer;
+    font-weight:700; font-size:15px; text-decoration:none;
+  }
+  .pay-btn.primary{background:var(--ember); color:var(--bg);}
+  .pay-btn.primary:hover{background:var(--paper);}
+  .pay-btn.secondary{background:transparent; border:1px solid var(--line); color:var(--paper);}
+  .pay-btn.secondary:hover{border-color:var(--ember); color:var(--ember);}
+
+  details.manual-pay{
+    margin-top:18px; border-top:1px solid var(--line); padding-top:18px;
+  }
+  details.manual-pay summary{
+    cursor:pointer; font-size:13px; color:var(--muted); list-style:none;
+  }
+  details.manual-pay summary::-webkit-details-marker{display:none;}
+  details.manual-pay summary::before{content:"+ "; color:var(--ember);}
+  details.manual-pay[open] summary::before{content:"– ";}
+  .transfer-box{
+    background:var(--bg); border:1px solid var(--line); border-radius:var(--radius);
+    padding:18px; margin-top:14px; font-size:14px;
+  }
+  .transfer-box .row{display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid var(--line);}
+  .transfer-box .row:last-child{border-bottom:none;}
+  .transfer-box .label{color:var(--muted);}
+  .transfer-box .value{font-family:'IBM Plex Mono', monospace;}
+
+  .fine-print{font-size:13px; color:var(--muted); text-align:center; margin-top:24px; max-width:480px; margin-left:auto; margin-right:auto;}
+
+  /* ---------- CRM / FORM ---------- */
+  .crm{
+    display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center;
+  }
+  .form-frame{
+    background:var(--bg-panel); border:1px solid var(--line); border-radius:var(--radius);
+    min-height:420px; display:flex; align-items:center; justify-content:center;
+    padding:20px; color:var(--muted); text-align:center; font-size:13px;
+  }
+  .form-frame iframe{width:100%; height:480px; border:none;}
+  @media (max-width:820px){.crm{grid-template-columns:1fr;}}
+
+  /* ---------- GALERIA ---------- */
+  .gallery-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:12px;
+  }
+  .gallery-grid .g-item{
+    aspect-ratio:1; background:var(--bg-panel); border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center; color:var(--muted); font-size:12px;
+    border-radius:var(--radius);
+  }
+  @media (max-width:700px){.gallery-grid{grid-template-columns:repeat(2,1fr);}}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    border-top:1px solid var(--line); padding:56px 0 40px; background:var(--bg);
+  }
+  .footer-inner{
+    display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:32px;
+  }
+  .footer-social{display:flex; gap:18px;}
+  .footer-social a{
+    text-decoration:none; color:var(--paper-dim); font-size:14px; border-bottom:1px solid transparent;
+  }
+  .footer-social a:hover{color:var(--ember); border-color:var(--ember);}
+  .footer-small{color:var(--muted); font-size:13px; margin-top:24px;}
+
+  .section-head .eyebrow{margin-bottom:0;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#top" class="logo">Panal<span>·</span>Refugio</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#historia">Historia</a>
+      <a href="#pilares">La banda</a>
+      <a href="#musica">Música</a>
+      <a href="#fotos">Fotos</a>
+      <a href="#entradas" class="nav-cta">Entradas</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="top">
+  <div class="glow" aria-hidden="true"></div>
+  <div class="hero-content">
+    <p class="eyebrow">Reencuentro · Disco nuevo</p>
+    <h1>Panal<br>Refugio</h1>
+    <p class="tagline">Después de un tiempo afuera, volvemos a prender la luz. Un show para presentar los temas nuevos, el disco completo, y para encontrarnos con la gente que nunca se fue.</p>
+
+    <div class="hero-meta">
+      <div>📅 <b>Viernes 13 de noviembre</b></div>
+      <div>📍 <b>Elvis</b></div>
+      <div>🎫 <b>Anticipada $15.000</b></div>
+    </div>
+
+    <div class="countdown mono" id="countdown">
+      <div class="cd-box"><div class="num" id="cd-days">--</div><div class="lbl">Días</div></div>
+      <div class="cd-box"><div class="num" id="cd-hours">--</div><div class="lbl">Horas</div></div>
+      <div class="cd-box"><div class="num" id="cd-mins">--</div><div class="lbl">Min</div></div>
+      <div class="cd-box"><div class="num" id="cd-secs">--</div><div class="lbl">Seg</div></div>
+    </div>
+
+    <div>
+      <a href="#entradas" class="btn">Conseguí tu entrada</a>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HISTORIA ================= -->
+<section id="historia">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">El refugio</p>
+      <h2>Volver siempre fue el plan.</h2>
+    </div>
+    <div class="historia-grid">
+      <div>
+        <p>Panal Refugio arrancó como esas bandas que se arman en una cocina, con más ganas que equipo. Con los años tocamos donde nos dejaron entrar, grabamos lo que pudimos, y en algún momento cada uno se fue a lo suyo — como pasa.</p>
+        <p class="pull">Pero el refugio nunca se cerró. Solo estaba esperando que volviéramos.</p>
+        <p>Este 13 de noviembre no es solo un show: es la excusa que necesitábamos. Traemos temas que escribimos separados y terminamos juntos, y el disco entero, tocado de punta a punta, en Elvis, con la gente que siempre estuvo — antes de que existiera un Spotify para seguirnos.</p>
+        <p>Esta vez lo queremos hacer bien. Entrada anticipada con precio congelado, para que nadie se quede afuera por la fiesta de último momento. Después va a costar más caro. Ahora es el momento.</p>
+      </div>
+      <div class="photo-frame">
+        <!-- REEMPLAZAR: cuando tengan la foto nueva de la banda, cambiar este div por
+             <img src="fotos/banda.jpg" alt="Panal Refugio"> -->
+        Foto de la banda<br>(próximamente)
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LOS PILARES ================= -->
+<section id="pilares">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">La banda</p>
+      <h2>Los pilares del refugio.</h2>
+    </div>
+    <div class="pilares-grid">
+      <div class="pilar-card">
+        <div class="pilar-photo">N.C.</div>
+        <div class="pilar-name">Nahuel Cisneros</div>
+        <!-- REEMPLAZAR: acá va el instrumento/rol de Nahuel -->
+        <div class="pilar-role mono">Instrumento</div>
+      </div>
+      <div class="pilar-card">
+        <div class="pilar-photo">M.D.</div>
+        <div class="pilar-name">Mariano Dominguez</div>
+        <!-- REEMPLAZAR: acá va el instrumento/rol de Mariano -->
+        <div class="pilar-role mono">Instrumento</div>
+      </div>
+      <div class="pilar-card">
+        <div class="pilar-photo">J.P.J.</div>
+        <div class="pilar-name">Juan Pablo Jaime</div>
+        <!-- REEMPLAZAR: acá va el instrumento/rol de Juan Pablo -->
+        <div class="pilar-role mono">Instrumento</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MUSICA ================= -->
+<section id="musica" class="section-alt">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Escuchá antes de venir</p>
+      <h2>Los temas nuevos, el disco, todo.</h2>
+    </div>
+    <div class="media-grid">
+      <div class="media-embed">
+        <!-- REEMPLAZAR SPOTIFY_URI: reemplazar "0" por el ID de tu álbum/artista de Spotify.
+             Ejemplo de link real: open.spotify.com/artist/TU_ID_ACA
+             El embed necesita: open.spotify.com/embed/artist/TU_ID_ACA -->
+        <iframe src="https://open.spotify.com/embed/artist/0" height="352" allow="encrypted-media" loading="lazy" title="Panal Refugio en Spotify"></iframe>
+      </div>
+      <div class="link-cards">
+        <a class="link-card" href="https://open.spotify.com/artist/REEMPLAZAR" target="_blank" rel="noopener">
+          <div><div class="name">Escuchá en Spotify</div><div class="platform">Spotify</div></div>
+          <span class="arrow">→</span>
+        </a>
+        <a class="link-card" href="https://youtube.com/@REEMPLAZAR" target="_blank" rel="noopener">
+          <div><div class="name">Videos y en vivo</div><div class="platform">YouTube</div></div>
+          <span class="arrow">→</span>
+        </a>
+        <a class="link-card" href="https://www.tiktok.com/@REEMPLAZAR" target="_blank" rel="noopener">
+          <div><div class="name">Detrás de escena</div><div class="platform">TikTok</div></div>
+          <span class="arrow">→</span>
+        </a>
+        <a class="link-card" href="https://instagram.com/REEMPLAZAR" target="_blank" rel="noopener">
+          <div><div class="name">El día a día</div><div class="platform">Instagram</div></div>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ENTRADAS ================= -->
+<section id="entradas">
+  <div class="wrap">
+    <div class="section-head" style="margin-left:auto; margin-right:auto; text-align:center;">
+      <p class="eyebrow">Entrada anticipada</p>
+      <h2>Guardá tu lugar en el refugio.</h2>
+    </div>
+
+    <div class="ticket">
+      <div class="ticket-top">
+        <div class="ticket-row">
+          <div>
+            <div class="eyebrow" style="margin-bottom:6px;">Panal Refugio · En vivo</div>
+            <div style="font-family:'Fraunces',serif; font-weight:600; font-size:20px;">Viernes 13 de noviembre — Elvis</div>
+          </div>
+          <span class="ticket-tag">Precio congelado</span>
+        </div>
+        <div class="ticket-price">$15.000 <sup>anticipada</sup></div>
+      </div>
+
+      <div class="perf"></div>
+
+      <div class="ticket-bottom">
+        <div class="pay-options">
+          <!-- REEMPLAZAR NX_LINK_FULL: pegar acá el Link de pago de Naranja X por el total ($15.000) -->
+          <a class="pay-btn primary" href="https://www.naranjax.com/l/REEMPLAZAR-PAGO-TOTAL" target="_blank" rel="noopener">
+            Pagar con Naranja X — $15.000
+          </a>
+          <!-- REEMPLAZAR NX_LINK_SEÑA: pegar acá el Link de pago de la seña (ej. $7.500) -->
+          <a class="pay-btn secondary" href="https://www.naranjax.com/l/REEMPLAZAR-SEÑA" target="_blank" rel="noopener">
+            Reservar con seña (pagás el resto después)
+          </a>
+        </div>
+
+        <details class="manual-pay">
+          <summary>¿Preferís pagar por transferencia?</summary>
+          <div class="transfer-box">
+            <!-- Alias real de Naranja X (Mariano) -->
+            <div class="row"><span class="label">Alias</span><span class="value">Marianmusic26</span></div>
+            <!-- REEMPLAZAR: si querés sumar también el CBU numérico (opcional, el alias ya alcanza para transferir) -->
+            <div class="row"><span class="label">CBU (opcional)</span><span class="value">REEMPLAZAR</span></div>
+            <!-- REEMPLAZAR: confirmá que el titular de este alias sea correcto -->
+            <div class="row"><span class="label">Titular</span><span class="value">Mariano Dominguez</span></div>
+          </div>
+          <p style="font-size:13px; color:var(--muted); margin-top:14px;">
+            Después de transferir, completá
+            <a href="#sumate" style="color:var(--ember); text-decoration:underline;">este formulario</a>
+            con el comprobante. Te confirmamos por WhatsApp y te llega tu código de entrada.
+          </p>
+        </details>
+      </div>
+    </div>
+
+    <p class="fine-print">Las entradas anticipadas tienen precio congelado hasta agotar cupo. Al confirmar tu pago te llega un código individual — mostralo en la puerta el día del show.</p>
+  </div>
+</section>
+
+<!-- ================= CRM / SUMATE ================= -->
+<section id="sumate" class="section-alt">
+  <div class="wrap">
+    <div class="crm">
+      <div>
+        <p class="eyebrow">Para los de siempre</p>
+        <h2 style="font-size:clamp(30px,4vw,44px);">¿Nos seguís hace rato? Sumate al refugio.</h2>
+        <p style="color:var(--paper-dim); margin-top:18px;">
+          Si escuchaste las maquetas viejas, viniste a los primeros shows, o simplemente nos bancás desde antes —
+          dejanos tus datos acá. Te vamos a avisar primero de todo: entradas, fechas nuevas, adelantos del disco.
+          También podés completar el comprobante de transferencia por acá.
+        </p>
+        <p style="color:var(--muted); font-size:13px; margin-top:16px;">
+          Tus datos quedan en una planilla nuestra, nada de spam — solo lo importante.
+        </p>
+      </div>
+      <div class="form-frame">
+        <!-- REEMPLAZAR GOOGLE_FORM_URL: pegar acá la URL de embed de tu Google Form
+             (Google Form → Enviar → pestaña "<>" → copiar el src del iframe) -->
+        <iframe src="https://docs.google.com/forms/d/e/REEMPLAZAR/viewform?embedded=true" title="Sumate al refugio">Cargando formulario…</iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOTOS ================= -->
+<section id="fotos">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Galería</p>
+      <h2>Fotos, muy pronto.</h2>
+    </div>
+    <div class="gallery-grid">
+      <!-- REEMPLAZAR: cada g-item por <img src="fotos/1.jpg" alt="..."> cuando tengan las fotos -->
+      <div class="g-item">01</div>
+      <div class="g-item">02</div>
+      <div class="g-item">03</div>
+      <div class="g-item">04</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <div>
+        <a href="#top" class="logo">Panal<span>·</span>Refugio</a>
+        <p class="footer-small">Viernes 13 de noviembre · Elvis</p>
+      </div>
+      <div class="footer-social mono">
+        <a href="https://open.spotify.com/artist/REEMPLAZAR" target="_blank" rel="noopener">Spotify</a>
+        <a href="https://youtube.com/@REEMPLAZAR" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://www.tiktok.com/@REEMPLAZAR" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://instagram.com/REEMPLAZAR" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+    <p class="footer-small">© 2026 Panal Refugio.</p>
+  </div>
+</footer>
+
+<script>
+  // Menú mobile
+  const menuBtn = document.getElementById('menuBtn');
+  const navLinks = document.getElementById('navLinks');
+  menuBtn.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', isOpen);
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded', 'false');
+  }));
+
+  // Countdown al 13 de noviembre 2026, 21:00 (hora Argentina)
+  // REEMPLAZAR la hora si el show empieza a otra hora
+  const showDate = new Date('2026-11-13T21:00:00-03:00').getTime();
+
+  function updateCountdown(){
+    const now = new Date().getTime();
+    const diff = showDate - now;
+    const els = {
+      d: document.getElementById('cd-days'),
+      h: document.getElementById('cd-hours'),
+      m: document.getElementById('cd-mins'),
+      s: document.getElementById('cd-secs')
+    };
+    if(diff <= 0){
+      els.d.textContent = '0'; els.h.textContent = '0'; els.m.textContent = '0'; els.s.textContent = '0';
+      return;
+    }
+    const days = Math.floor(diff / (1000*60*60*24));
+    const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+    const mins = Math.floor((diff % (1000*60*60)) / (1000*60));
+    const secs = Math.floor((diff % (1000*60)) / 1000);
+    els.d.textContent = days;
+    els.h.textContent = String(hours).padStart(2,'0');
+    els.m.textContent = String(mins).padStart(2,'0');
+    els.s.textContent = String(secs).padStart(2,'0');
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  // Reveal suave al hacer scroll
+  const revealEls = document.querySelectorAll('section, header');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, {threshold:0.08});
+  revealEls.forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(18px)';
+    el.style.transition = 'opacity .7s ease, transform .7s ease';
+    io.observe(el);
+  });
+  // el header ya está visible al cargar
+  document.querySelector('.hero').style.opacity = '1';
+  document.querySelector('.hero').style.transform = 'translateY(0)';
+</script>
+
+</body>
+</html>
