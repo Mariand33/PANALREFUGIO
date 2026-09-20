@@ -258,13 +258,34 @@ nav{
 .message-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:30px}
 .message-card textarea{width:100%;background:#090907;border:1px solid #34342a;color:#fff;padding:14px;min-height:140px}
 
+/* SOCIAL */
+.social-row{display:flex;gap:12px;flex-wrap:wrap}
+.social-row a{
+  width:44px;height:44px;border-radius:50%;border:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center;transition:.2s;background:#0d0d0a
+}
+.social-row a:hover{background:var(--yellow);border-color:var(--yellow);transform:translateY(-3px)}
+.social-row svg{width:20px;height:20px;fill:var(--yellow);transition:.2s}
+.social-row a:hover svg{fill:#080808}
+.social-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
+.video-frame{
+  position:relative;border:1px solid var(--line);background:#10100d;box-shadow:var(--shadow);
+  aspect-ratio:16/9;overflow:hidden
+}
+.video-frame iframe{width:100%;height:100%;border:0;display:block}
+.social-links-title{font:400 30px "Bebas Neue";color:var(--yellow);margin:0 0 14px}
+.social-handle{color:#aaa;font-size:13px;margin-top:14px}
+
 /* FOOTER */
 footer{padding:60px 0 35px;border-top:1px solid var(--line);background:#050505}
-.footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:30px}
+.footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:30px}
 .footer-title{font:400 50px "Bebas Neue";color:var(--yellow)}
 .footer-col h4{font:700 12px "DM Sans";color:var(--yellow);letter-spacing:.14em;text-transform:uppercase}
 .footer-col p,.footer-col a{color:#aaa;font-size:13px;text-decoration:none}
 .footer-col a:hover{color:var(--yellow)}
+.footer-col .social-row{margin-top:6px}
+.footer-col .social-row a{width:36px;height:36px}
+.footer-col .social-row svg{width:16px;height:16px}
 .copyright{border-top:1px solid #222;margin-top:35px;padding-top:20px;color:#666;font-size:11px}
 
 /* MODAL */
@@ -286,12 +307,13 @@ footer{padding:60px 0 35px;border-top:1px solid var(--line);background:#050505}
 
 /* MOBILE */
 @media(max-width:900px){
-  .hero-grid,.promo-wrap,.ticket-layout,.staff-grid,.message-grid{grid-template-columns:1fr}
+  .hero-grid,.promo-wrap,.ticket-layout,.staff-grid,.message-grid,.social-grid{grid-template-columns:1fr}
   .poster{min-height:400px}
   .band-grid{grid-template-columns:1fr 1fr}
   .trust{grid-template-columns:1fr 1fr}
   .trust-card:nth-child(2){border-right:0}
   .trust-card:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .footer-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:700px){
   .nav-links{
@@ -312,6 +334,7 @@ footer{padding:60px 0 35px;border-top:1px solid var(--line);background:#050505}
   .trust-card:last-child{border-bottom:0}
   .promo-main{padding:30px}
   .section{padding:75px 0}
+  .footer-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -326,6 +349,7 @@ footer{padding:60px 0 35px;border-top:1px solid var(--line);background:#050505}
       <a href="#banda">La banda</a>
       <a href="#entradas">Entradas</a>
       <a href="#staff">Staff</a>
+      <a href="#redes">Redes</a>
       <a href="#mensaje">Mensaje</a>
       <a href="#entradas" class="nav-cta">QUIERO MI ENTRADA</a>
     </div>
@@ -580,6 +604,44 @@ footer{padding:60px 0 35px;border-top:1px solid var(--line);background:#050505}
   </div>
 </section>
 
+<section class="section" id="redes">
+  <div class="wrap">
+    <p class="eyebrow">Seguí el zumbido</p>
+    <h2 class="section-title">Nuestras redes.</h2>
+    <p class="section-lead">Escuchanos, mirá el último video y enterate de todo lo que se viene.</p>
+    <div class="social-grid" style="margin-top:40px">
+      <div>
+        <h3 class="social-links-title">Encontranos en</h3>
+        <div class="social-row">
+          <a href="https://youtube.com/@panalrefugio651?si=x7zsR9-p6ml_Iyxu" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">
+            <svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8ZM9.6 15.6V8.4L15.8 12l-6.2 3.6Z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/panal_refugio_ok?stkn=MXNsMmlmcHlxZ2dnaA==" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.06 2.2.27 2.9.55.75.3 1.4.7 2 1.3.6.6 1 1.25 1.3 2 .28.7.5 1.7.55 2.9.06 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.06 1.2-.27 2.2-.55 2.9-.3.75-.7 1.4-1.3 2-.6.6-1.25 1-2 1.3-.7.28-1.7.5-2.9.55-1.3.06-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.06-2.2-.27-2.9-.55-.75-.3-1.4-.7-2-1.3-.6-.6-1-1.25-1.3-2-.28-.7-.5-1.7-.55-2.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.06-1.2.27-2.2.55-2.9.3-.75.7-1.4 1.3-2 .6-.6 1.25-1 2-1.3.7-.28 1.7-.5 2.9-.55C8.4 2.2 8.8 2.2 12 2.2Zm0 1.8c-3.15 0-3.52 0-4.76.07-1 .04-1.5.2-1.86.34-.47.18-.8.4-1.15.75-.35.35-.57.68-.75 1.15-.14.36-.3.86-.34 1.86C3.03 8.48 3 8.85 3 12s0 3.52.07 4.76c.04 1 .2 1.5.34 1.86.18.47.4.8.75 1.15.35.35.68.57 1.15.75.36.14.86.3 1.86.34 1.24.06 1.61.07 4.76.07s3.52 0 4.76-.07c1-.04 1.5-.2 1.86-.34.47-.18.8-.4 1.15-.75.35-.35.57-.68.75-1.15.14-.36.3-.86.34-1.86.06-1.24.07-1.61.07-4.76s0-3.52-.07-4.76c-.04-1-.2-1.5-.34-1.86a3.1 3.1 0 0 0-.75-1.15 3.1 3.1 0 0 0-1.15-.75c-.36-.14-.86-.3-1.86-.34C15.52 4 15.15 4 12 4Zm0 3.2a4.8 4.8 0 1 1 0 9.6 4.8 4.8 0 0 1 0-9.6Zm0 1.8a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5-2a1.12 1.12 0 1 1 0 2.24 1.12 1.12 0 0 1 0-2.24Z"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@panalrefugio?_r=1&_t=ZS-99ty21pTY3h" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok">
+            <svg viewBox="0 0 24 24"><path d="M16.6 2h-3.3v13.9c0 1.5-1.2 2.7-2.7 2.7a2.7 2.7 0 0 1-2.7-2.7 2.7 2.7 0 0 1 2.7-2.7c.3 0 .6.05.9.14v-3.35a6.05 6.05 0 0 0-.9-.07A6.05 6.05 0 0 0 4.6 15.9a6.05 6.05 0 0 0 6.05 6.05 6.05 6.05 0 0 0 6.05-6.05V8.6a8.3 8.3 0 0 0 4.7 1.45V6.75a5 5 0 0 1-4.8-4.75Z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/share/1DCzeHdLHg/" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M13.5 22v-8.4h2.8l.4-3.3h-3.2V8.1c0-.95.26-1.6 1.63-1.6H16.8V3.5c-.28-.04-1.25-.12-2.37-.12-2.35 0-3.96 1.43-3.96 4.06v2.27H7.7v3.3h2.77V22h3.03Z"/></svg>
+          </a>
+          <a href="https://open.spotify.com/intl-es/artist/3tyr55a3xt1WssztiQy3VR" target="_blank" rel="noopener" aria-label="Spotify" title="Spotify">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm4.59 14.4a.62.62 0 0 1-.86.2c-2.36-1.44-5.33-1.77-8.83-.97a.62.62 0 1 1-.28-1.21c3.83-.88 7.12-.5 9.77 1.12.3.18.4.57.2.86Zm1.22-2.72a.78.78 0 0 1-1.07.26c-2.7-1.66-6.82-2.14-10.02-1.17a.78.78 0 1 1-.45-1.49c3.66-1.11 8.2-.57 11.28 1.33.37.23.48.72.26 1.07Zm.1-2.83C14.6 8.96 9.46 8.8 6.5 9.7a.93.93 0 1 1-.54-1.78c3.4-1.03 9.05-.85 12.62 1.3a.93.93 0 0 1-.96 1.6Z"/></svg>
+          </a>
+        </div>
+        <p class="social-handle">@panal_refugio_ok · @panalrefugio · Panal Refugio</p>
+        <div class="hero-actions" style="margin-top:26px">
+          <a class="btn yellow" href="https://open.spotify.com/intl-es/artist/3tyr55a3xt1WssztiQy3VR" target="_blank" rel="noopener">ESCUCHAR EN SPOTIFY →</a>
+          <a class="btn outline" href="https://youtube.com/@panalrefugio651?si=x7zsR9-p6ml_Iyxu" target="_blank" rel="noopener">VER CANAL DE YOUTUBE</a>
+        </div>
+      </div>
+      <div class="video-frame">
+        <iframe src="https://www.youtube.com/embed/tb3NlmI_eFo" title="Panal Refugio en YouTube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section" id="mensaje">
   <div class="wrap message-grid">
     <div>
@@ -625,6 +687,26 @@ footer{padding:60px 0 35px;border-top:1px solid var(--line);background:#050505}
         <p>Valor individual: $15.000</p>
         <p>Alias: panalrefugio2026</p>
         <p>Titular: Nelson Mariano Dominguez</p>
+      </div>
+      <div class="footer-col">
+        <h4>Seguinos</h4>
+        <div class="social-row">
+          <a href="https://youtube.com/@panalrefugio651?si=x7zsR9-p6ml_Iyxu" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">
+            <svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8ZM9.6 15.6V8.4L15.8 12l-6.2 3.6Z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/panal_refugio_ok?stkn=MXNsMmlmcHlxZ2dnaA==" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.06 2.2.27 2.9.55.75.3 1.4.7 2 1.3.6.6 1 1.25 1.3 2 .28.7.5 1.7.55 2.9.06 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.06 1.2-.27 2.2-.55 2.9-.3.75-.7 1.4-1.3 2-.6.6-1.25 1-2 1.3-.7.28-1.7.5-2.9.55-1.3.06-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.06-2.2-.27-2.9-.55-.75-.3-1.4-.7-2-1.3-.6-.6-1-1.25-1.3-2-.28-.7-.5-1.7-.55-2.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.06-1.2.27-2.2.55-2.9.3-.75.7-1.4 1.3-2 .6-.6 1.25-1 2-1.3.7-.28 1.7-.5 2.9-.55C8.4 2.2 8.8 2.2 12 2.2Zm0 1.8c-3.15 0-3.52 0-4.76.07-1 .04-1.5.2-1.86.34-.47.18-.8.4-1.15.75-.35.35-.57.68-.75 1.15-.14.36-.3.86-.34 1.86C3.03 8.48 3 8.85 3 12s0 3.52.07 4.76c.04 1 .2 1.5.34 1.86.18.47.4.8.75 1.15.35.35.68.57 1.15.75.36.14.86.3 1.86.34 1.24.06 1.61.07 4.76.07s3.52 0 4.76-.07c1-.04 1.5-.2 1.86-.34.47-.18.8-.4 1.15-.75.35-.35.57-.68.75-1.15.14-.36.3-.86.34-1.86.06-1.24.07-1.61.07-4.76s0-3.52-.07-4.76c-.04-1-.2-1.5-.34-1.86a3.1 3.1 0 0 0-.75-1.15 3.1 3.1 0 0 0-1.15-.75c-.36-.14-.86-.3-1.86-.34C15.52 4 15.15 4 12 4Zm0 3.2a4.8 4.8 0 1 1 0 9.6 4.8 4.8 0 0 1 0-9.6Zm0 1.8a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5-2a1.12 1.12 0 1 1 0 2.24 1.12 1.12 0 0 1 0-2.24Z"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@panalrefugio?_r=1&_t=ZS-99ty21pTY3h" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok">
+            <svg viewBox="0 0 24 24"><path d="M16.6 2h-3.3v13.9c0 1.5-1.2 2.7-2.7 2.7a2.7 2.7 0 0 1-2.7-2.7 2.7 2.7 0 0 1 2.7-2.7c.3 0 .6.05.9.14v-3.35a6.05 6.05 0 0 0-.9-.07A6.05 6.05 0 0 0 4.6 15.9a6.05 6.05 0 0 0 6.05 6.05 6.05 6.05 0 0 0 6.05-6.05V8.6a8.3 8.3 0 0 0 4.7 1.45V6.75a5 5 0 0 1-4.8-4.75Z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/share/1DCzeHdLHg/" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M13.5 22v-8.4h2.8l.4-3.3h-3.2V8.1c0-.95.26-1.6 1.63-1.6H16.8V3.5c-.28-.04-1.25-.12-2.37-.12-2.35 0-3.96 1.43-3.96 4.06v2.27H7.7v3.3h2.77V22h3.03Z"/></svg>
+          </a>
+          <a href="https://open.spotify.com/intl-es/artist/3tyr55a3xt1WssztiQy3VR" target="_blank" rel="noopener" aria-label="Spotify" title="Spotify">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm4.59 14.4a.62.62 0 0 1-.86.2c-2.36-1.44-5.33-1.77-8.83-.97a.62.62 0 1 1-.28-1.21c3.83-.88 7.12-.5 9.77 1.12.3.18.4.57.2.86Zm1.22-2.72a.78.78 0 0 1-1.07.26c-2.7-1.66-6.82-2.14-10.02-1.17a.78.78 0 1 1-.45-1.49c3.66-1.11 8.2-.57 11.28 1.33.37.23.48.72.26 1.07Zm.1-2.83C14.6 8.96 9.46 8.8 6.5 9.7a.93.93 0 1 1-.54-1.78c3.4-1.03 9.05-.85 12.62 1.3a.93.93 0 0 1-.96 1.6Z"/></svg>
+          </a>
+        </div>
       </div>
     </div>
     <div class="copyright">© 2026 Panal Refugio · panalrefugio.com.ar</div>
