@@ -3,732 +3,841 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Panal Refugio — Reencuentro · En Noviembre · (Rock and Roll y Elvis</title>
-<meta name="description" content="Panal Refugio vuelve al escenario en el mes de Noviembre en Elvis. Reencuentro, disco nuevo, entradas anticipadas con precio congelado.">
-
-<!-- ============================================================
-  GUÍA RÁPIDA — buscá "REEMPLAZAR" en este archivo para encontrar
-  todos los lugares donde tenés que pegar tus links reales.
-  El detalle completo de cada paso está en README.md
-============================================================ -->
+<title>Panal Refugio | Rock & Pop | 6 de noviembre</title>
+<meta name="description" content="Panal Refugio vuelve a Elvis el viernes 6 de noviembre. Rock & Pop, reencuentro, canciones nuevas y entradas anticipadas.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Monoton&family=Bungee&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
 
 <style>
-  :root{
-    --bg:#0D0B10;
-    --bg-alt:#161119;
-    --bg-panel:#1D1622;
-    --ember:#FF7A3D;
-    --ember-deep:#B4502A;
-    --neon-pink:#FF2E92;
-    --neon-cyan:#2BF0FF;
-    --paper:#F5EFE9;
-    --paper-dim:#C9BEAE;
-    --muted:#8C7F6E;
-    --line: rgba(245,239,233,0.14);
-    --radius: 2px;
-  }
+:root{
+  --black:#080808;
+  --black2:#11110e;
+  --yellow:#ffd21c;
+  --yellow2:#f2ad00;
+  --honey:#c77b08;
+  --cream:#fff8dc;
+  --white:#f7f7f2;
+  --muted:#aaa894;
+  --line:rgba(255,210,28,.24);
+  --card:#15150f;
+  --shadow:0 18px 60px rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--black);color:var(--white);
+  font-family:"DM Sans",sans-serif;line-height:1.55;
+}
+a{color:inherit}
+button,input,select,textarea{font:inherit}
+img{max-width:100%;display:block}
+.wrap{width:min(1160px,calc(100% - 36px));margin:auto}
+.mono{font-family:monospace}
+.display{font-family:"Bebas Neue",sans-serif;letter-spacing:.03em}
+.marker{font-family:"Permanent Marker",cursive}
+.eyebrow{
+  color:var(--yellow);font-size:12px;font-weight:800;letter-spacing:.22em;
+  text-transform:uppercase
+}
+.section{padding:100px 0;position:relative}
+.section.dark{background:#0d0d0a}
+.section-title{
+  font:400 clamp(42px,7vw,78px)/.92 "Bebas Neue",sans-serif;
+  text-transform:uppercase;margin:10px 0 22px
+}
+.section-lead{max-width:700px;color:#c9c7b8;font-size:18px}
 
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  @media (prefers-reduced-motion: reduce){
-    html{scroll-behavior:auto;}
-    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
-  }
+/* Honeycomb decoration */
+.honeycomb{
+  position:absolute;inset:0;overflow:hidden;pointer-events:none;opacity:.12
+}
+.honeycomb:before{
+  content:"";position:absolute;right:-100px;top:80px;width:430px;height:520px;
+  background:
+    linear-gradient(30deg,transparent 44%,var(--yellow) 45%,var(--yellow) 48%,transparent 49%) 0 0/80px 138px,
+    linear-gradient(150deg,transparent 44%,var(--yellow) 45%,var(--yellow) 48%,transparent 49%) 0 0/80px 138px,
+    linear-gradient(90deg,transparent 47%,var(--yellow) 48%,var(--yellow) 51%,transparent 52%) 0 0/80px 138px;
+  transform:rotate(7deg)
+}
+.honey-drip{
+  position:absolute;right:0;top:0;width:220px;height:130px;
+  background:linear-gradient(var(--yellow),var(--honey));
+  clip-path:polygon(0 0,100% 0,100% 20%,92% 20%,90% 76%,82% 91%,74% 75%,72% 28%,55% 28%,53% 58%,46% 70%,39% 57%,38% 28%,20% 28%,18% 45%,11% 55%,4% 43%,4% 28%,0 28%)
+}
 
-  body{
-    margin:0;
-    background:var(--bg);
-    color:var(--paper);
-    font-family:'Space Grotesk', sans-serif;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  background:rgba(8,8,8,.88);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line)
+}
+.nav-inner{
+  height:72px;display:flex;align-items:center;justify-content:space-between
+}
+.logo{
+  text-decoration:none;font:400 30px "Bebas Neue";letter-spacing:.04em;
+  color:var(--yellow);display:flex;align-items:center;gap:8px
+}
+.logo small{font:700 9px "DM Sans";color:var(--white);letter-spacing:.2em}
+.bee{font-size:24px}
+.nav-links{display:flex;align-items:center;gap:26px}
+.nav-links a{
+  text-decoration:none;text-transform:uppercase;font-size:12px;font-weight:700;
+  letter-spacing:.12em;color:#ddd;transition:.2s
+}
+.nav-links a:hover{color:var(--yellow)}
+.nav-cta{
+  background:var(--yellow);color:#111!important;padding:11px 17px;border-radius:2px
+}
+.menu-btn{display:none;background:none;border:0;color:var(--yellow);font-size:28px}
 
-  h1,h2,h3,.display{
-    font-family:'Bungee', system-ui, sans-serif;
-    font-weight:400;
-    line-height:1.05;
-    margin:0;
-    letter-spacing:0.01em;
-    text-transform:uppercase;
-  }
+/* HERO */
+.hero{
+  min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;
+  padding:130px 0 80px;
+  background:
+    radial-gradient(circle at 70% 42%,rgba(255,210,28,.13),transparent 28%),
+    radial-gradient(circle at 20% 80%,rgba(199,123,8,.12),transparent 25%),
+    #080808;
+}
+.hero:after{
+  content:"";position:absolute;inset:0;opacity:.07;pointer-events:none;
+  background-image:repeating-linear-gradient(0deg,#fff 0 1px,transparent 1px 4px)
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center;position:relative;z-index:2
+}
+.kicker{display:flex;align-items:center;gap:10px;color:var(--yellow);font-weight:800;text-transform:uppercase}
+.kicker:before{content:"";width:42px;height:3px;background:var(--yellow)}
+.hero h1{
+  font:400 clamp(82px,13vw,170px)/.78 "Bebas Neue";margin:24px 0 8px;
+  color:var(--yellow);text-shadow:5px 5px 0 #5b4100
+}
+.hero h1 span{display:block;color:var(--white);font-size:.52em;letter-spacing:.06em;text-shadow:none}
+.hero-sub{
+  font-size:clamp(17px,2.2vw,22px);max-width:620px;color:#ddd;margin:26px 0
+}
+.event-box{
+  display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:30px;max-width:620px
+}
+.event-item{border-left:3px solid var(--yellow);padding:8px 0 8px 14px}
+.event-item strong{display:block;font:400 28px "Bebas Neue";color:var(--yellow)}
+.event-item span{font-size:12px;color:#b9b6a5;text-transform:uppercase;letter-spacing:.1em}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.btn{
+  border:0;text-decoration:none;cursor:pointer;padding:15px 24px;
+  text-transform:uppercase;font-weight:900;letter-spacing:.07em;font-size:13px;
+  display:inline-flex;align-items:center;justify-content:center;gap:9px
+}
+.btn.yellow{background:var(--yellow);color:#090909;box-shadow:8px 8px 0 var(--honey)}
+.btn.yellow:hover{transform:translate(2px,2px);box-shadow:5px 5px 0 var(--honey)}
+.btn.outline{border:1px solid var(--yellow);color:var(--yellow);background:transparent}
+.btn.outline:hover{background:var(--yellow);color:#080808}
+.poster{
+  min-height:520px;border:1px solid var(--line);position:relative;overflow:hidden;
+  background:
+    linear-gradient(145deg,rgba(255,210,28,.12),transparent 42%),
+    repeating-linear-gradient(135deg,transparent 0 24px,rgba(255,210,28,.025) 24px 25px),
+    #10100d;
+  box-shadow:var(--shadow)
+}
+.poster:before{
+  content:"";position:absolute;inset:30px;border:2px solid var(--yellow);opacity:.25
+}
+.poster-content{position:absolute;inset:0;padding:45px;display:flex;flex-direction:column;justify-content:space-between}
+.poster-top{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--yellow)}
+.poster-title{font:400 88px/.8 "Bebas Neue";color:var(--yellow);text-shadow:4px 4px #513b00}
+.poster-title span{display:block;color:var(--white);font-size:52px}
+.poster-bees{font-size:70px;letter-spacing:10px;filter:grayscale(1)}
+.poster-bottom{font:400 34px "Bebas Neue";color:var(--white)}
+.poster-bottom b{color:var(--yellow)}
 
-  .mono{
-    font-family:'IBM Plex Mono', monospace;
-    letter-spacing:0.04em;
-  }
+/* COUNTDOWN */
+.countdown{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}
+.cd{min-width:78px;padding:10px 12px;background:#111;border:1px solid var(--line);text-align:center}
+.cd strong{display:block;font:400 35px "Bebas Neue";color:var(--yellow)}
+.cd span{font-size:9px;text-transform:uppercase;color:#8f8c7e;letter-spacing:.14em}
 
-  a{color:inherit;}
-  img{max-width:100%; display:block;}
+/* PROMO */
+.promo-wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:26px;align-items:stretch}
+.promo-main,.promo-next{
+  border:1px solid var(--line);background:var(--card);position:relative;overflow:hidden
+}
+.promo-main{padding:48px}
+.promo-main:after{
+  content:"🐝";position:absolute;right:30px;bottom:-20px;font-size:100px;opacity:.13
+}
+.promo-label{
+  display:inline-block;background:var(--yellow);color:#080808;padding:7px 13px;
+  font-weight:900;text-transform:uppercase;font-size:12px
+}
+.promo-number{font:400 clamp(80px,13vw,150px)/.8 "Bebas Neue";color:var(--yellow);margin:18px 0 5px}
+.promo-text{font-size:20px;color:#eee;max-width:500px}
+.promo-valid{margin-top:18px;color:var(--yellow);font-weight:800;text-transform:uppercase}
+.price-once{
+  margin-top:30px;padding-top:20px;border-top:1px solid var(--line);
+  color:#aaa;font-size:14px
+}
+.price-once strong{font-size:26px;color:var(--white);margin-left:5px}
+.promo-next{padding:30px}
+.next-title{font:400 32px "Bebas Neue";color:var(--yellow);margin-bottom:18px}
+.next-row{padding:17px 0;border-bottom:1px solid var(--line)}
+.next-row:last-child{border-bottom:0}
+.next-row b{font:400 32px "Bebas Neue";display:block}
+.next-row span{color:#aaa;font-size:13px}
+.ticket-cta{margin-top:25px;width:100%}
 
-  a:focus-visible, button:focus-visible, input:focus-visible{
-    outline:2px solid var(--neon-cyan);
-    outline-offset:3px;
-  }
+/* TRUST STRIP */
+.trust{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.trust-card{padding:28px 20px;border-right:1px solid var(--line);text-align:center}
+.trust-card:last-child{border:0}
+.trust-icon{font-size:28px}
+.trust-card b{display:block;margin-top:8px;color:var(--yellow);text-transform:uppercase;font-size:12px;letter-spacing:.1em}
+.trust-card span{display:block;color:#aaa;font-size:12px;margin-top:5px}
 
-  .wrap{
-    max-width:1120px;
-    margin:0 auto;
-    padding:0 28px;
-  }
+/* TICKET FORM */
+.ticket-layout{display:grid;grid-template-columns:.85fr 1.15fr;gap:35px}
+.ticket-info,.form-card,.staff-card,.message-card{
+  background:var(--card);border:1px solid var(--line);padding:32px
+}
+.ticket-info h3,.form-card h3,.staff-card h3,.message-card h3{
+  font:400 38px "Bebas Neue";color:var(--yellow);margin:0 0 15px
+}
+.steps{display:grid;gap:13px;margin-top:25px}
+.step{display:flex;gap:13px;align-items:flex-start}
+.step i{
+  width:30px;height:30px;display:grid;place-items:center;background:var(--yellow);
+  color:#111;font-style:normal;font-weight:900;flex:none
+}
+.step p{margin:2px 0;color:#c7c4b4;font-size:14px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field.full{grid-column:1/-1}
+.field label{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:#aaa}
+.field input,.field select,.field textarea{
+  width:100%;background:#090907;border:1px solid #34342a;color:white;padding:13px 14px;outline:none
+}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--yellow)}
+.field textarea{min-height:90px;resize:vertical}
+.total-box{
+  margin:20px 0;padding:18px;background:#090907;border-left:3px solid var(--yellow);
+  display:flex;justify-content:space-between;align-items:center
+}
+.total-box span{color:#aaa;font-size:13px}
+.total-box strong{font:400 35px "Bebas Neue";color:var(--yellow)}
+.ref-badge{
+  background:rgba(255,210,28,.1);border:1px solid var(--line);padding:10px 12px;
+  margin-bottom:18px;color:#ddd;font-size:12px
+}
+.hidden{display:none!important}
 
-  .eyebrow{
-    font-family:'IBM Plex Mono', monospace;
-    text-transform:uppercase;
-    font-size:12px;
-    letter-spacing:0.22em;
-    color:var(--ember);
-  }
+/* STAFF */
+.staff-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.staff-highlight{
+  border-left:4px solid var(--yellow);padding:5px 0 5px 18px;margin:25px 0
+}
+.staff-highlight strong{display:block;font:400 42px "Bebas Neue";color:var(--yellow)}
+.staff-highlight span{color:#aaa;font-size:13px}
+.staff-rules{display:grid;gap:10px}
+.staff-rule{padding:13px;background:#0b0b09;border:1px solid rgba(255,210,28,.12);font-size:13px;color:#c8c6b8}
+.staff-rule b{color:var(--yellow)}
 
-  /* ---------- NAV ---------- */
-  nav{
-    position:fixed; top:0; left:0; right:0; z-index:100;
-    background:rgba(13,11,16,0.82);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--line);
-  }
-  .nav-inner{
-    max-width:1120px; margin:0 auto; padding:16px 28px;
-    display:flex; align-items:center; justify-content:space-between;
-  }
-  .logo{
-    font-family:'Bungee', sans-serif; font-size:16px;
-    text-decoration:none; color:var(--paper); text-transform:uppercase; letter-spacing:.02em;
-  }
-  .logo span{color:var(--neon-pink);}
-  .nav-links{display:flex; gap:28px; align-items:center;}
-  .nav-links a{
-    text-decoration:none; font-size:14px; color:var(--paper-dim);
-    transition:color .2s;
-  }
-  .nav-links a:hover{color:var(--neon-cyan);}
-  .nav-cta{
-    background:var(--neon-pink); color:var(--bg) !important;
-    padding:9px 18px; border-radius:var(--radius);
-    font-weight:600; font-size:13px !important;
-    box-shadow:0 0 16px rgba(255,46,146,0.55);
-  }
-  .nav-cta:hover{background:var(--neon-cyan) !important; box-shadow:0 0 16px rgba(43,240,255,0.55);}
-  .menu-btn{display:none; background:none; border:none; color:var(--paper); font-size:24px; cursor:pointer;}
+/* BAND */
+.band-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.member{background:var(--card);border:1px solid var(--line);padding:25px;text-align:center}
+.member .avatar{
+  width:90px;height:90px;border-radius:50%;margin:0 auto 15px;display:grid;place-items:center;
+  background:var(--yellow);color:#080808;font:400 27px "Bebas Neue"
+}
+.member h3{font:400 27px "Bebas Neue";margin:0}
+.member p{margin:4px 0;color:#aaa;text-transform:uppercase;font-size:11px;letter-spacing:.1em}
 
-  @media (max-width:760px){
-    .nav-links{
-      position:fixed; top:64px; left:0; right:0; bottom:0;
-      background:var(--bg); flex-direction:column; justify-content:flex-start;
-      padding:32px 28px; gap:24px; transform:translateX(100%);
-      transition:transform .3s ease; border-top:1px solid var(--line);
-    }
-    .nav-links.open{transform:translateX(0);}
-    .menu-btn{display:block;}
-  }
+/* MESSAGE */
+.message-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:30px}
+.message-card textarea{width:100%;background:#090907;border:1px solid #34342a;color:#fff;padding:14px;min-height:140px}
 
-  /* ---------- HERO ---------- */
-  .hero{
-    position:relative; min-height:100vh;
-    display:flex; flex-direction:column; align-items:center; justify-content:center;
-    text-align:center; padding:140px 24px 80px; overflow:hidden;
-  }
-  .hero::before{
-    content:""; position:absolute; inset:0; pointer-events:none; z-index:1;
-    background-image:repeating-linear-gradient(0deg, rgba(255,255,255,0.025) 0px, rgba(255,255,255,0.025) 1px, transparent 1px, transparent 3px);
-    mix-blend-mode:overlay;
-  }
-  .glow{
-    position:absolute; top:44%; left:50%; width:1000px; height:1000px;
-    transform:translate(-50%,-50%);
-    background:
-      radial-gradient(circle at 35% 45%, rgba(255,46,146,0.28) 0%, rgba(255,46,146,0) 42%),
-      radial-gradient(circle at 65% 55%, rgba(43,240,255,0.22) 0%, rgba(43,240,255,0) 42%);
-    filter:blur(14px);
-    animation:pulse 5s ease-in-out infinite;
-    pointer-events:none;
-  }
-  @keyframes pulse{
-    0%,100%{opacity:0.75; transform:translate(-50%,-50%) scale(1);}
-    50%{opacity:1; transform:translate(-50%,-50%) scale(1.06);}
-  }
-  .hero-content{position:relative; z-index:2; max-width:800px;}
-  .hero h1{
-    font-family:'Monoton', system-ui, sans-serif;
-    font-size:clamp(46px, 10vw, 108px);
-    font-weight:400;
-    color:var(--paper);
-    text-transform:uppercase;
-    letter-spacing:0.02em;
-    text-shadow:
-      0 0 6px rgba(255,255,255,0.6),
-      0 0 18px var(--neon-pink),
-      0 0 40px var(--neon-pink),
-      0 0 80px rgba(43,240,255,0.5);
-    animation:flicker 4s linear infinite;
-  }
-  @keyframes flicker{
-    0%, 3%, 6%, 100%{ opacity:1; }
-    4%{ opacity:0.55; }
-    5%{ opacity:0.92; }
-    7%{ opacity:0.85; }
-    8%{ opacity:1; }
-  }
-  .hero .tagline{
-    margin-top:22px; font-size:clamp(16px,2.4vw,20px); color:var(--paper-dim);
-    max-width:520px; margin-left:auto; margin-right:auto;
-  }
-  .hero-meta{
-    margin-top:36px; display:flex; gap:28px; flex-wrap:wrap; justify-content:center;
-    font-family:'IBM Plex Mono', monospace; font-size:14px; color:var(--muted);
-  }
-  .hero-meta b{color:var(--paper); font-weight:600;}
+/* FOOTER */
+footer{padding:60px 0 35px;border-top:1px solid var(--line);background:#050505}
+.footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:30px}
+.footer-title{font:400 50px "Bebas Neue";color:var(--yellow)}
+.footer-col h4{font:700 12px "DM Sans";color:var(--yellow);letter-spacing:.14em;text-transform:uppercase}
+.footer-col p,.footer-col a{color:#aaa;font-size:13px;text-decoration:none}
+.footer-col a:hover{color:var(--yellow)}
+.copyright{border-top:1px solid #222;margin-top:35px;padding-top:20px;color:#666;font-size:11px}
 
-  .countdown{
-    margin-top:44px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap;
-  }
-  .cd-box{
-    background:var(--bg-panel); border:1px solid var(--line);
-    padding:14px 18px; min-width:76px; text-align:center; border-radius:var(--radius);
-  }
-  .cd-box .num{
-    font-family:'IBM Plex Mono', monospace; font-size:30px; font-weight:600; color:var(--neon-cyan);
-    text-shadow:0 0 10px rgba(43,240,255,0.6);
-  }
-  .cd-box .lbl{
-    font-size:10px; text-transform:uppercase; letter-spacing:.14em; color:var(--muted); margin-top:4px;
-  }
+/* MODAL */
+.modal{
+  position:fixed;inset:0;background:rgba(0,0,0,.82);z-index:2000;display:none;
+  align-items:center;justify-content:center;padding:20px
+}
+.modal.open{display:flex}
+.modal-box{
+  width:min(600px,100%);background:#11110d;border:1px solid var(--yellow);padding:30px;
+  box-shadow:0 25px 80px #000
+}
+.modal-box h3{font:400 42px "Bebas Neue";color:var(--yellow);margin:0}
+.close{float:right;background:none;border:0;color:#aaa;font-size:28px;cursor:pointer}
+.order-code{
+  font:400 48px "Bebas Neue";letter-spacing:.08em;color:var(--yellow);margin:15px 0
+}
+.modal-note{font-size:13px;color:#aaa}
 
-  .btn{
-    display:inline-block; padding:16px 34px; border-radius:var(--radius);
-    background:var(--neon-pink); color:var(--bg); text-decoration:none;
-    font-family:'Bungee', sans-serif; text-transform:uppercase; letter-spacing:.03em;
-    font-weight:400; font-size:14px; margin-top:40px; border:none; cursor:pointer;
-    box-shadow:0 0 22px rgba(255,46,146,0.55);
-    transition:transform .15s ease, background .2s ease, box-shadow .2s ease;
+/* MOBILE */
+@media(max-width:900px){
+  .hero-grid,.promo-wrap,.ticket-layout,.staff-grid,.message-grid{grid-template-columns:1fr}
+  .poster{min-height:400px}
+  .band-grid{grid-template-columns:1fr 1fr}
+  .trust{grid-template-columns:1fr 1fr}
+  .trust-card:nth-child(2){border-right:0}
+  .trust-card:nth-child(-n+2){border-bottom:1px solid var(--line)}
+}
+@media(max-width:700px){
+  .nav-links{
+    position:fixed;top:72px;left:0;right:0;background:#090907;
+    flex-direction:column;align-items:stretch;padding:25px;gap:0;
+    transform:translateY(-130%);transition:.25s;border-bottom:1px solid var(--line)
   }
-  .btn:hover{background:var(--neon-cyan); box-shadow:0 0 22px rgba(43,240,255,0.6); transform:translateY(-2px);}
-  .btn.ghost{
-    background:transparent; color:var(--paper); border:1px solid var(--line); box-shadow:none;
-  }
-  .btn.ghost:hover{border-color:var(--ember); color:var(--ember); background:transparent;}
-
-  /* ---------- SECTIONS ---------- */
-  section{padding:120px 0;}
-  .section-alt{background:var(--bg-alt);}
-  .section-head{max-width:640px; margin-bottom:56px;}
-  .section-head h2{font-size:clamp(34px,5vw,54px); margin-top:14px;}
-
-  /* ---------- HISTORIA ---------- */
-  .historia-grid{
-    display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start;
-  }
-  .historia-grid p{color:var(--paper-dim); font-size:17px; margin:0 0 18px;}
-  .pull{
-    font-family:'Space Grotesk', sans-serif; font-style:italic; font-weight:600;
-    font-size:26px; color:var(--paper); border-left:3px solid var(--neon-pink);
-    padding-left:22px; margin:32px 0;
-  }
-  .photo-frame{
-    aspect-ratio:4/5; background:var(--bg-panel); border:1px solid var(--line);
-    display:flex; align-items:center; justify-content:center; text-align:center;
-    color:var(--muted); font-size:13px; padding:24px; border-radius:var(--radius);
-  }
-  @media (max-width:820px){.historia-grid{grid-template-columns:1fr;}}
-
-  /* ---------- PILARES ---------- */
-  .pilares-grid{
-    display:grid; grid-template-columns:repeat(3,1fr); gap:24px;
-  }
-  .pilar-card{
-    background:var(--bg-panel); border:1px solid var(--line); border-radius:var(--radius);
-    padding:32px 24px; text-align:center;
-  }
-  .pilar-photo{
-    width:88px; height:88px; margin:0 auto 20px; border-radius:50%;
-    background:radial-gradient(circle at 35% 30%, var(--ember) 0%, var(--ember-deep) 70%);
-    display:flex; align-items:center; justify-content:center;
-    font-family:'Bungee', sans-serif; font-weight:400; font-size:22px; color:var(--bg);
-  }
-  .pilar-name{font-family:'Bungee', sans-serif; font-weight:400; font-size:16px; text-transform:uppercase;}
-  .pilar-role{font-size:12px; color:var(--muted); margin-top:6px; text-transform:uppercase; letter-spacing:.1em;}
-  @media (max-width:700px){.pilares-grid{grid-template-columns:1fr;}}
-
-  /* ---------- MUSICA ---------- */
-  .media-grid{display:grid; grid-template-columns:1.1fr 1fr; gap:40px;}
-  .media-embed{
-    background:var(--bg-panel); border:1px solid var(--line); border-radius:var(--radius);
-    overflow:hidden;
-  }
-  .media-embed iframe{width:100%; border:none; display:block;}
-  .link-cards{display:flex; flex-direction:column; gap:14px;}
-  .link-card{
-    display:flex; align-items:center; justify-content:space-between;
-    background:var(--bg-panel); border:1px solid var(--line); border-radius:var(--radius);
-    padding:20px 24px; text-decoration:none; transition:border-color .2s;
-  }
-  .link-card:hover{border-color:var(--ember);}
-  .link-card .name{font-weight:600; font-size:15px;}
-  .link-card .platform{font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.1em;}
-  .link-card .arrow{color:var(--ember); font-size:20px;}
-  @media (max-width:820px){.media-grid{grid-template-columns:1fr;}}
-
-  .video-feature{margin-top:56px;}
-  .video-embed iframe{aspect-ratio:16/9; height:auto;}
-
-  /* ---------- ENTRADAS (TICKET) ---------- */
-  .ticket{
-    position:relative;
-    background:var(--bg-panel);
-    border:1.5px dashed var(--neon-pink);
-    border-radius:6px;
-    max-width:640px; margin:0 auto;
-    display:grid; grid-template-columns:1fr;
-    box-shadow:0 0 34px rgba(255,46,146,0.14);
-  }
-  .ticket-top{padding:40px 40px 30px;}
-  .ticket-row{display:flex; justify-content:space-between; align-items:flex-start; gap:20px; flex-wrap:wrap;}
-  .ticket-price{
-    font-family:'IBM Plex Mono', monospace; font-size:44px; color:var(--ember); font-weight:600;
-  }
-  .ticket-price sup{font-size:16px; color:var(--muted); margin-left:6px;}
-  .ticket-tag{
-    background:var(--ember); color:var(--bg); font-size:11px; font-weight:700;
-    text-transform:uppercase; letter-spacing:.08em; padding:5px 10px; border-radius:3px;
-  }
-  .perf{
-    position:relative; height:0; border-top:1.5px dashed var(--ember-deep); margin:0 0;
-  }
-  .perf::before, .perf::after{
-    content:""; position:absolute; top:-11px; width:22px; height:22px;
-    background:var(--bg); border-radius:50%;
-  }
-  .perf::before{left:-11px;}
-  .perf::after{right:-11px;}
-  .ticket-bottom{padding:30px 40px 40px;}
-  .pay-options{display:flex; flex-direction:column; gap:14px;}
-  .pay-btn{
-    display:flex; align-items:center; justify-content:center; gap:10px;
-    width:100%; padding:16px; border-radius:var(--radius); border:none; cursor:pointer;
-    font-weight:700; font-size:15px; text-decoration:none;
-  }
-  .pay-btn.primary{background:var(--neon-pink); color:var(--bg); box-shadow:0 0 18px rgba(255,46,146,0.5);}
-  .pay-btn.primary:hover{background:var(--neon-cyan); box-shadow:0 0 18px rgba(43,240,255,0.55);}
-  .pay-btn.secondary{background:transparent; border:1px solid var(--line); color:var(--paper);}
-  .pay-btn.secondary:hover{border-color:var(--neon-cyan); color:var(--neon-cyan);}
-
-  details.manual-pay{
-    margin-top:18px; border-top:1px solid var(--line); padding-top:18px;
-  }
-  details.manual-pay summary{
-    cursor:pointer; font-size:13px; color:var(--muted); list-style:none;
-  }
-  details.manual-pay summary::-webkit-details-marker{display:none;}
-  details.manual-pay summary::before{content:"+ "; color:var(--ember);}
-  details.manual-pay[open] summary::before{content:"– ";}
-  .transfer-box{
-    background:var(--bg); border:1px solid var(--line); border-radius:var(--radius);
-    padding:18px; margin-top:14px; font-size:14px;
-  }
-  .transfer-box .row{display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid var(--line);}
-  .transfer-box .row:last-child{border-bottom:none;}
-  .transfer-box .label{color:var(--muted);}
-  .transfer-box .value{font-family:'IBM Plex Mono', monospace;}
-
-  .fine-print{font-size:13px; color:var(--muted); text-align:center; margin-top:24px; max-width:480px; margin-left:auto; margin-right:auto;}
-
-  /* ---------- CRM / FORM ---------- */
-  .crm{
-    display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center;
-  }
-  .form-frame{
-    background:var(--bg-panel); border:1px solid var(--line); border-radius:var(--radius);
-    min-height:420px; display:flex; align-items:center; justify-content:center;
-    padding:20px; color:var(--muted); text-align:center; font-size:13px;
-  }
-  .form-frame iframe{width:100%; height:480px; border:none;}
-  @media (max-width:820px){.crm{grid-template-columns:1fr;}}
-
-  /* ---------- GALERIA ---------- */
-  .gallery-grid{
-    display:grid; grid-template-columns:repeat(4,1fr); gap:12px;
-  }
-  .gallery-grid .g-item{
-    aspect-ratio:1; background:var(--bg-panel); border:1px solid var(--line);
-    display:flex; align-items:center; justify-content:center; color:var(--muted); font-size:12px;
-    border-radius:var(--radius);
-  }
-  @media (max-width:700px){.gallery-grid{grid-template-columns:repeat(2,1fr);}}
-
-  /* ---------- FOOTER ---------- */
-  footer{
-    border-top:1px solid var(--line); padding:56px 0 40px; background:var(--bg);
-  }
-  .footer-inner{
-    display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:32px;
-  }
-  .footer-social{display:flex; gap:18px;}
-  .footer-social a{
-    text-decoration:none; color:var(--paper-dim); font-size:14px; border-bottom:1px solid transparent;
-  }
-  .footer-social a:hover{color:var(--ember); border-color:var(--ember);}
-  .footer-small{color:var(--muted); font-size:13px; margin-top:24px;}
-
-  .section-head .eyebrow{margin-bottom:0;}
-
-  /* ---------- CONTADOR ENTRADAS ---------- */
-  .sold-counter{
-    max-width:640px; margin:22px auto 0; display:flex; align-items:center; gap:14px;
-    background:var(--bg); border:1px solid var(--line); border-radius:var(--radius);
-    padding:14px 20px;
-  }
-  .sold-counter .dot{
-    width:9px; height:9px; border-radius:50%; background:var(--neon-cyan);
-    box-shadow:0 0 8px var(--neon-cyan); flex-shrink:0;
-    animation:dot-pulse 1.6s ease-in-out infinite;
-  }
-  @keyframes dot-pulse{
-    0%,100%{opacity:1; transform:scale(1);}
-    50%{opacity:0.4; transform:scale(0.8);}
-  }
-  .sold-counter .txt{font-size:13px; color:var(--paper-dim);}
-  .sold-counter .txt b{color:var(--paper); font-weight:600;}
-  .sold-counter .num{
-    font-family:'IBM Plex Mono', monospace; color:var(--neon-cyan); font-weight:600;
-  }
+  .nav-links.open{transform:translateY(0)}
+  .nav-links a{padding:15px;border-bottom:1px solid #222}
+  .menu-btn{display:block}
+  .hero{padding-top:110px}
+  .hero h1{font-size:105px}
+  .poster-title{font-size:68px}
+  .event-box,.form-grid{grid-template-columns:1fr}
+  .field.full{grid-column:auto}
+  .band-grid,.trust{grid-template-columns:1fr}
+  .trust-card{border-right:0;border-bottom:1px solid var(--line)}
+  .trust-card:last-child{border-bottom:0}
+  .promo-main{padding:30px}
+  .section{padding:75px 0}
+}
 </style>
 </head>
-<body>
 
+<body>
 <nav>
-  <div class="nav-inner">
-    <a href="#top" class="logo">Panal<span>·</span>Refugio</a>
-    <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">☰</button>
+  <div class="wrap nav-inner">
+    <a class="logo" href="#inicio"><span class="bee">🐝</span>PANAL <small>REFUGIO</small></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Menú">☰</button>
     <div class="nav-links" id="navLinks">
-      <a href="#historia">Historia</a>
-      <a href="#pilares">La banda</a>
-      <a href="#musica">Música</a>
-      <a href="#fotos">Fotos</a>
-      <a href="#entradas" class="nav-cta">Entradas</a>
+      <a href="#evento">Evento</a>
+      <a href="#banda">La banda</a>
+      <a href="#entradas">Entradas</a>
+      <a href="#staff">Staff</a>
+      <a href="#mensaje">Mensaje</a>
+      <a href="#entradas" class="nav-cta">QUIERO MI ENTRADA</a>
     </div>
   </div>
 </nav>
 
-<!-- ================= HERO ================= -->
-<header class="hero" id="top">
-  <div class="glow" aria-hidden="true"></div>
-  <div class="hero-content">
-    <p class="eyebrow">Reencuentro · Disco nuevo</p>
-    <h1>Panal<br>Refugio</h1>
-    <p class="tagline">Después de un tiempo afuera, la banda vuelve a prender la luz. Un show para presentar los temas nuevos, el disco completo, y para encontrarse con la gente que nunca se fue.</p>
-
-    <div class="hero-meta">
-      <div>📅 <b>Viernes 13 de noviembre</b></div>
-      <div>📍 <b>Elvis</b></div>
-      <div>🎫 <b>Anticipada $15.000</b></div>
-    </div>
-
-    <div class="countdown mono" id="countdown">
-      <div class="cd-box"><div class="num" id="cd-days">--</div><div class="lbl">Días</div></div>
-      <div class="cd-box"><div class="num" id="cd-hours">--</div><div class="lbl">Horas</div></div>
-      <div class="cd-box"><div class="num" id="cd-mins">--</div><div class="lbl">Min</div></div>
-      <div class="cd-box"><div class="num" id="cd-secs">--</div><div class="lbl">Seg</div></div>
-    </div>
-
-    <!-- REEMPLAZAR: el número "sold-count" en el script de abajo (near-real-time) según entradas vendidas reales -->
-    <div class="sold-counter">
-      <span class="dot" aria-hidden="true"></span>
-      <span class="txt">Ya se vendieron <b><span class="num" id="sold-count">25</span> entradas anticipadas</b> — el precio congelado dura hasta agotar cupo.</span>
-    </div>
-
+<header class="hero" id="inicio">
+  <div class="honeycomb"></div><div class="honey-drip"></div>
+  <div class="wrap hero-grid">
     <div>
-      <a href="#entradas" class="btn">Conseguí tu entrada</a>
+      <div class="kicker">Reencuentro · Rock & Pop · Río Cuarto</div>
+      <h1>Panal<span>Refugio</span></h1>
+      <p class="hero-sub">Después de un tiempo afuera, la banda vuelve a prender la luz. Canciones de siempre, temas nuevos y una noche para volver a encontrarnos.</p>
+
+      <div class="event-box">
+        <div class="event-item"><strong>VIERNES 6</strong><span>Noviembre 2026</span></div>
+        <div class="event-item"><strong>ELVIS</strong><span>Alvear y Colón · Río Cuarto</span></div>
+      </div>
+
+      <div class="countdown">
+        <div class="cd"><strong id="days">--</strong><span>Días</span></div>
+        <div class="cd"><strong id="hours">--</strong><span>Horas</span></div>
+        <div class="cd"><strong id="mins">--</strong><span>Minutos</span></div>
+        <div class="cd"><strong id="secs">--</strong><span>Segundos</span></div>
+      </div>
+
+      <div class="hero-actions">
+        <a class="btn yellow" href="#entradas">🐝 Conseguí tu entrada</a>
+        <a class="btn outline" href="#evento">Ver el evento</a>
+      </div>
+    </div>
+
+    <div class="poster" aria-label="Afiche Panal Refugio">
+      <div class="poster-content">
+        <div class="poster-top">Panal Refugio · En vivo</div>
+        <div>
+          <div class="poster-bees">🐝 🐝</div>
+          <div class="poster-title">6 NOV<span>ELVIS</span></div>
+        </div>
+        <div class="poster-bottom">ROCK <b>&</b> POP<br><small style="font:600 12px 'DM Sans';letter-spacing:.15em;color:#aaa">RÍO CUARTO · CÓRDOBA</small></div>
+      </div>
     </div>
   </div>
 </header>
 
-<!-- ================= HISTORIA ================= -->
-<section id="historia">
+<section class="section dark" id="entradas">
+  <div class="honeycomb"></div>
   <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">El refugio</p>
-      <h2>Volver siempre fue el plan.</h2>
-    </div>
-    <div class="historia-grid">
-      <div>
-        <p>Panal Refugio nació alrededor de 2012, cuando Nahuel, Juan Pablo y Marian —todavía muy pibes— coincidieron intercambiando gustos musicales y decidieron juntarse en una sala a zapar. Poco después se sumó Tincho Córdoba en el bajo, y de a poco se fueron acercando amigos y músicos que pasaban por la sala. Nunca hicieron covers: solo buscaron una sonoridad donde sus emociones quedaran plasmadas de alguna manera. Así nació "Malabares gris", cuando Nahuel propuso llevarla hacia el reggae. Al principio todo estaba invadido de poesías y dibujos; con el tiempo, solo quedaron las canciones.</p>
-        <p>Cuando pudieron juntar algo de dinero, fueron al Estudio Pentágono para que Luis los grabara. Apenas y a gusto, tenían siete canciones de estilos distintos, con mucho power, buenos riffs y letras que intentaban reflejar lo que se respiraba en esos años. De esa etapa también nació "Amores", con un estribillo pegadizo que les cambiaba el ánimo — pasaban por todos los estados de ánimo posibles.</p>
-        <p>Las comparaciones no tardaron en llegar, aunque ninguna banda conocida fue nunca su motivación real: se movieron siempre sin identificarse con nada ni con nadie.</p>
-        <p>Lo bueno fue encontrarse con mucha gente que cantaba sus canciones y los seguía. Había algo ahí, aunque no sabían bien qué era — quizás una fiesta de géneros: cuando había que hacer pogo, lo hacían; cuando había que bailar, bailaban; cuando había que rockear, ponían primera. Eso fue Panal Refugio: una búsqueda incesante entre amistad, musicalidad y sentirse bien.</p>
-        <p class="pull">Pero el refugio nunca se cerró. Solo estaba esperando que volvieran.</p>
-        <p>Hoy la banda se convoca nuevamente con la formación básicamente inicial, feliz de poder celebrar este reencuentro junto a todos, con esas canciones de siempre y algunas nuevas que no llegaron a grabar antes.</p>
-        <p>En este mes noviembre no es solo un show: es la excusa que necesitaban. Traen temas que escribieron separados y terminaron juntos, y el disco entero, tocado de punta a punta, en Elvis, con la gente que siempre estuvo — desde antes de que existiera un Spotify para seguirlos.</p>
-        <p>Esta vez lo quieren hacer bien. Entrada anticipada con precio congelado, para que nadie se quede afuera por la fiesta de último momento. Después va a costar más caro. Ahora es el momento.</p>
-      </div>
-      <div class="photo-frame">
-        <!-- REEMPLAZAR: cuando tengan la foto nueva de la banda, cambiar este div por
-             <img src="fotos/banda.jpg" alt="Panal Refugio"> -->
-        Foto de la banda<br>(próximamente)
-      </div>
-    </div>
-  </div>
-</section>
+    <p class="eyebrow">Preventa</p>
+    <h2 class="section-title">Conseguí tu entrada.</h2>
 
-<!-- ================= LOS PILARES ================= -->
-<section id="pilares">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">La banda</p>
-      <h2>Los pilares del refugio.</h2>
-    </div>
-    <div class="pilares-grid">
-      <div class="pilar-card">
-        <div class="pilar-photo">N.C.</div>
-        <div class="pilar-name">Nahuel Cisneros</div>
-        <!-- REEMPLAZAR: acá va el instrumento/rol de Nahuel -->
-        <div class="pilar-role mono">Instrumento</div>
-      </div>
-      <div class="pilar-card">
-        <div class="pilar-photo">M.D.</div>
-        <div class="pilar-name">Mariano Dominguez</div>
-        <!-- REEMPLAZAR: acá va el instrumento/rol de Mariano -->
-        <div class="pilar-role mono">Instrumento</div>
-      </div>
-      <div class="pilar-card">
-        <div class="pilar-photo">J.P.J.</div>
-        <div class="pilar-name">Juan Pablo Jaime</div>
-        <!-- REEMPLAZAR: acá va el instrumento/rol de Juan Pablo -->
-        <div class="pilar-role mono">Instrumento</div>
-      </div>
-    </div>
-  </div>
-</section>
+    <div class="promo-wrap">
+      <div class="promo-main">
+        <span class="promo-label" id="promoLabel">PROMOCIÓN ACTUAL</span>
+        <div class="promo-number" id="promoNumber">3 × 1</div>
+        <div class="promo-text" id="promoText">3 entradas por el valor de una.</div>
+        <div class="promo-valid" id="promoValid">Promoción válida hasta el 30 de septiembre</div>
 
-<!-- ================= MUSICA ================= -->
-<section id="musica" class="section-alt">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">Escuchá antes de venir</p>
-      <h2>Los temas nuevos, el disco, todo.</h2>
-    </div>
-    <div class="media-grid">
-      <div class="media-embed">
-        <iframe src="https://open.spotify.com/embed/artist/3tyr55a3xt1WssztiQy3VR" height="352" allow="encrypted-media" loading="lazy" title="Panal Refugio en Spotify"></iframe>
-      </div>
-      <div class="link-cards">
-        <a class="link-card" href="https://open.spotify.com/artist/3tyr55a3xt1WssztiQy3VR" target="_blank" rel="noopener">
-          <div><div class="name">Escuchá en Spotify</div><div class="platform">Spotify</div></div>
-          <span class="arrow">→</span>
-        </a>
-        <a class="link-card" href="https://www.youtube.com/watch?v=oK6flWbdVcQ" target="_blank" rel="noopener">
-          <div><div class="name">Videos y en vivo</div><div class="platform">YouTube</div></div>
-          <span class="arrow">→</span>
-        </a>
-        <a class="link-card" href="https://www.tiktok.com/@REEMPLAZAR" target="_blank" rel="noopener">
-          <div><div class="name">Detrás de escena</div><div class="platform">TikTok</div></div>
-          <span class="arrow">→</span>
-        </a>
-        <a class="link-card" href="https://instagram.com/REEMPLAZAR" target="_blank" rel="noopener">
-          <div><div class="name">El día a día</div><div class="platform">Instagram</div></div>
-          <span class="arrow">→</span>
-        </a>
-      </div>
-    </div>
-
-    <div class="video-feature">
-      <p class="eyebrow" style="margin-bottom:14px;">Mirá — Amores (Remasterizado)</p>
-      <div class="media-embed video-embed">
-        <iframe src="https://www.youtube.com/embed/oK6flWbdVcQ" height="440" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" title="Panal Refugio - Amores (Remasterizado)"></iframe>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= ENTRADAS ================= -->
-<section id="entradas">
-  <div class="wrap">
-    <div class="section-head" style="margin-left:auto; margin-right:auto; text-align:center;">
-      <p class="eyebrow">Entrada anticipada</p>
-      <h2>Guardá tu lugar en el refugio.</h2>
-    </div>
-
-    <!-- REEMPLAZAR: mismo número que "sold-count" arriba, mantenido en sync manual -->
-    <div class="sold-counter" style="margin-bottom:32px;">
-      <span class="dot" aria-hidden="true"></span>
-      <span class="txt">Ya se vendieron <b><span class="num">25</span> entradas anticipadas</b>. El precio congelado dura hasta agotar cupo.</span>
-    </div>
-
-    <div class="ticket">
-      <div class="ticket-top">
-        <div class="ticket-row">
-          <div>
-            <div class="eyebrow" style="margin-bottom:6px;">Panal Refugio · En vivo</div>
-            <div style="font-family:'Bungee',sans-serif; font-weight:400; font-size:17px; text-transform:uppercase;">Viernes 13 de noviembre — Elvis</div>
-          </div>
-          <span class="ticket-tag">Precio congelado</span>
-        </div>
-        <div class="ticket-price">$15.000 <sup>anticipada</sup></div>
-      </div>
-
-      <div class="perf"></div>
-
-      <div class="ticket-bottom">
-        <div class="pay-options">
-          <!-- REEMPLAZAR NX_LINK_FULL: pegar acá el Link de pago de Naranja X por el total ($15.000) -->
-          <a class="pay-btn primary" href="https://www.naranjax.com/l/REEMPLAZAR-PAGO-TOTAL" target="_blank" rel="noopener">
-            Pagar con Naranja X — $15.000
-          </a>
-          <!-- REEMPLAZAR NX_LINK_SEÑA: pegar acá el Link de pago de la seña (ej. $7.500) -->
-          <a class="pay-btn secondary" href="https://www.naranjax.com/l/REEMPLAZAR-SEÑA" target="_blank" rel="noopener">
-            Reservar con seña (pagás el resto después)
-          </a>
+        <div class="price-once">
+          Valor de la entrada <strong>$15.000</strong>
         </div>
 
-        <details class="manual-pay">
-          <summary>¿Preferís pagar por transferencia?</summary>
-          <div class="transfer-box">
-            <!-- Alias real de Naranja X (Mariano) -->
-            <div class="row"><span class="label">Alias</span><span class="value">Marianmusic26</span></div>
-            <!-- REEMPLAZAR: si querés sumar también el CBU numérico (opcional, el alias ya alcanza para transferir) -->
-            <div class="row"><span class="label">CBU (opcional)</span><span class="value">REEMPLAZAR</span></div>
-            <!-- REEMPLAZAR: confirmá que el titular de este alias sea correcto -->
-            <div class="row"><span class="label">Titular</span><span class="value">Mariano Dominguez</span></div>
+        <a class="btn yellow ticket-cta" href="#comprar">QUIERO MIS ENTRADAS →</a>
+      </div>
+
+      <div class="promo-next">
+        <div class="next-title">Próximas etapas</div>
+        <div class="next-row">
+          <b>2 × 1</b>
+          <span>Del 1 al 20 de octubre · 2 entradas por el mismo valor promocional.</span>
+        </div>
+        <div class="next-row">
+          <b>1 × 1</b>
+          <span>Desde el 21 de octubre · entrada individual.</span>
+        </div>
+        <p style="font-size:12px;color:#777;margin-top:18px">
+          La promoción se actualiza automáticamente según la fecha.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="evento">
+  <div class="wrap">
+    <p class="eyebrow">La noche</p>
+    <h2 class="section-title">Volver siempre fue el plan.</h2>
+    <p class="section-lead">
+      Panal Refugio nació alrededor de 2012. Después de años, el refugio vuelve a abrirse:
+      canciones de aquella etapa, material nuevo y una noche para compartir con quienes estuvieron
+      antes y con quienes llegan ahora.
+    </p>
+
+    <div style="margin-top:45px" class="trust">
+      <div class="trust-card"><div class="trust-icon">🎫</div><b>Entrada digital</b><span>Código individual para cada entrada.</span></div>
+      <div class="trust-card"><div class="trust-icon">📱</div><b>WhatsApp / mail</b><span>El sistema podrá enviar la confirmación.</span></div>
+      <div class="trust-card"><div class="trust-icon">🐝</div><b>Staff Panal</b><span>También podés vender entradas.</span></div>
+      <div class="trust-card"><div class="trust-icon">✓</div><b>Ingreso controlado</b><span>QR validado en la puerta.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark" id="comprar">
+  <div class="wrap ticket-layout">
+    <div class="ticket-info">
+      <p class="eyebrow">Compra</p>
+      <h3>Tu entrada. Tu código. Tu lugar.</h3>
+      <p style="color:#aaa;font-size:14px">
+        Completá tus datos, elegí la cantidad y generá tu pedido. El pago se confirma
+        mediante transferencia al alias oficial.
+      </p>
+
+      <div class="steps">
+        <div class="step"><i>1</i><p>Completás tus datos y la cantidad de entradas.</p></div>
+        <div class="step"><i>2</i><p>Transferís al alias <b style="color:var(--yellow)">panalrefugio2026</b>.</p></div>
+        <div class="step"><i>3</i><p>Guardás el comprobante para enviarlo al sistema.</p></div>
+        <div class="step"><i>4</i><p>Una vez confirmado el pago, cada entrada recibe un código único.</p></div>
+        <div class="step"><i>5</i><p>En la puerta se valida el código/QR y queda registrado el ingreso.</p></div>
+      </div>
+
+      <div style="margin-top:30px;padding:18px;background:#090907;border:1px solid var(--line)">
+        <div style="font-size:11px;color:#888;text-transform:uppercase;letter-spacing:.12em">Medio de pago</div>
+        <div style="font-size:22px;color:var(--yellow);margin-top:5px">panalrefugio2026</div>
+        <div style="font-size:12px;color:#999">Titular: Nelson Mariano Dominguez</div>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <p class="eyebrow">Pedido de entradas</p>
+      <h3 id="formTitle">Reservá ahora</h3>
+
+      <div class="ref-badge" id="refBadge">Venta directa · sin vendedor asignado</div>
+
+      <form id="ticketForm">
+        <div class="form-grid">
+          <div class="field">
+            <label>Nombre y apellido</label>
+            <input id="buyerName" required placeholder="Ej. Juan Pérez">
           </div>
-          <p style="font-size:13px; color:var(--muted); margin-top:14px;">
-            Después de transferir, completá
-            <a href="#sumate" style="color:var(--ember); text-decoration:underline;">este formulario</a>
-            con el comprobante. Te confirmamos por WhatsApp y te llega tu código de entrada.
-          </p>
-        </details>
-      </div>
-    </div>
+          <div class="field">
+            <label>WhatsApp</label>
+            <input id="buyerPhone" required placeholder="Ej. 3584...">
+          </div>
+          <div class="field full">
+            <label>Email</label>
+            <input id="buyerEmail" type="email" required placeholder="tu@email.com">
+          </div>
+          <div class="field">
+            <label>Cantidad</label>
+            <select id="qty">
+              <option value="1">1 entrada</option>
+              <option value="2">2 entradas</option>
+              <option value="3">3 entradas</option>
+              <option value="4">4 entradas</option>
+              <option value="5">5 entradas</option>
+              <option value="6">6 entradas</option>
+              <option value="7">7 entradas</option>
+              <option value="8">8 entradas</option>
+              <option value="9">9 entradas</option>
+              <option value="10">10 entradas</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>¿Cómo conociste el show?</label>
+            <select id="source">
+              <option>Instagram</option>
+              <option>WhatsApp</option>
+              <option>Amigo/a</option>
+              <option>Staff Panal</option>
+              <option>Otro</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label>Mensaje para Panal (opcional)</label>
+            <textarea id="buyerMessage" placeholder="Dejanos un mensaje..."></textarea>
+          </div>
+        </div>
 
-    <p class="fine-print">Las entradas anticipadas tienen precio congelado hasta agotar cupo. Al confirmar tu pago te llega un código individual — mostralo en la puerta el día del show.</p>
-  </div>
-</section>
+        <div class="total-box">
+          <span id="totalLabel">Total del pedido</span>
+          <strong id="total">$15.000</strong>
+        </div>
 
-<!-- ================= CRM / SUMATE ================= -->
-<section id="sumate" class="section-alt">
-  <div class="wrap">
-    <div class="crm">
-      <div>
-        <p class="eyebrow">Para los de siempre</p>
-        <h2 style="font-size:clamp(30px,4vw,44px);">¿Nos seguís hace rato? Sumate al refugio.</h2>
-        <p style="color:var(--paper-dim); margin-top:18px;">
-          Si escuchaste las maquetas viejas, viniste a los primeros shows, o simplemente nos bancás desde antes —
-          dejanos tus datos acá. Te vamos a avisar primero de todo: entradas, fechas nuevas, adelantos del disco.
-          También podés completar el comprobante de transferencia por acá.
+        <button class="btn yellow" type="submit" style="width:100%">GENERAR MI PEDIDO →</button>
+        <p style="font-size:11px;color:#666;margin:13px 0 0">
+          En esta primera versión el pedido se guarda localmente para probar el flujo.
+          Para producción hay que conectarlo a la base de datos/CRM.
         </p>
-        <p style="color:var(--muted); font-size:13px; margin-top:16px;">
-          Tus datos quedan en una planilla nuestra, nada de spam — solo lo importante.
-        </p>
-      </div>
-      <div class="form-frame">
-        <!-- REEMPLAZAR GOOGLE_FORM_URL: pegar acá la URL de embed de tu Google Form
-             (Google Form → Enviar → pestaña "<>" → copiar el src del iframe) -->
-        <iframe src="https://docs.google.com/forms/d/e/REEMPLAZAR/viewform?embedded=true" title="Sumate al refugio">Cargando formulario…</iframe>
-      </div>
+      </form>
     </div>
   </div>
 </section>
 
-<!-- ================= FOTOS ================= -->
-<section id="fotos">
+<section class="section" id="staff">
+  <div class="wrap staff-grid">
+    <div class="staff-card">
+      <p class="eyebrow">Staff Panal</p>
+      <h3>¿Querés vender para Panal?</h3>
+      <p style="color:#aaa">
+        Registrate como vendedor/a y recibí un enlace personal para compartir.
+        Las ventas quedan asociadas automáticamente a tu código.
+      </p>
+
+      <div class="staff-highlight">
+        <strong>$2.500</strong>
+        <span>de comisión por cada entrada vendida y cobrada a un tercero.</span>
+      </div>
+
+      <div class="staff-rules">
+        <div class="staff-rule"><b>✓ Venta confirmada:</b> genera comisión.</div>
+        <div class="staff-rule"><b>✕ Compra propia:</b> no genera comisión.</div>
+        <div class="staff-rule"><b>📱 Link personal:</b> el comprador llega atribuido automáticamente.</div>
+        <div class="staff-rule"><b>💰 Pago:</b> el comprador transfiere al alias oficial de Panal.</div>
+      </div>
+
+      <a href="#registro-staff" class="btn outline" style="margin-top:25px">QUIERO SER STAFF →</a>
+    </div>
+
+    <div class="staff-card" id="registro-staff">
+      <p class="eyebrow">Registro</p>
+      <h3>Sumate al equipo.</h3>
+      <form id="staffForm">
+        <div class="field" style="margin-bottom:14px">
+          <label>Nombre y apellido</label>
+          <input id="staffName" required placeholder="Tu nombre">
+        </div>
+        <div class="field" style="margin-bottom:14px">
+          <label>WhatsApp</label>
+          <input id="staffPhone" required placeholder="Tu WhatsApp">
+        </div>
+        <div class="field" style="margin-bottom:14px">
+          <label>Email</label>
+          <input id="staffEmail" type="email" required placeholder="tu@email.com">
+        </div>
+        <button class="btn yellow" type="submit" style="width:100%">REGISTRARME COMO STAFF</button>
+      </form>
+      <div id="staffResult" style="margin-top:20px"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark" id="banda">
   <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">Galería</p>
-      <h2>Fotos, muy pronto.</h2>
-    </div>
-    <div class="gallery-grid">
-      <!-- REEMPLAZAR: cada g-item por <img src="fotos/1.jpg" alt="..."> cuando tengan las fotos -->
-      <div class="g-item">01</div>
-      <div class="g-item">02</div>
-      <div class="g-item">03</div>
-      <div class="g-item">04</div>
+    <p class="eyebrow">Los pilares del refugio</p>
+    <h2 class="section-title">La banda.</h2>
+    <div class="band-grid">
+      <div class="member"><div class="avatar">MD</div><h3>Marian Domínguez</h3><p>Voz</p></div>
+      <div class="member"><div class="avatar">NC</div><h3>Nahuel Cisneros</h3><p>Batería</p></div>
+      <div class="member"><div class="avatar">JP</div><h3>Juan Pablo Jaime</h3><p>Guitarra</p></div>
+      <div class="member"><div class="avatar">AG</div><h3>Alejandro Gil</h3><p>Bajo</p></div>
     </div>
   </div>
 </section>
 
-<!-- ================= FOOTER ================= -->
+<section class="section" id="mensaje">
+  <div class="wrap message-grid">
+    <div>
+      <p class="eyebrow">Comunidad</p>
+      <h2 class="section-title">Dejanos un mensaje.</h2>
+      <p class="section-lead">
+        Queremos recuperar historias, recuerdos, canciones y mensajes de la gente que
+        fue parte del camino de Panal Refugio.
+      </p>
+    </div>
+    <div class="message-card">
+      <h3>Mensaje para Panal</h3>
+      <form id="messageForm">
+        <div class="field" style="margin-bottom:14px">
+          <label>Nombre</label>
+          <input id="msgName" required placeholder="Tu nombre">
+        </div>
+        <div class="field" style="margin-bottom:14px">
+          <label>Mensaje</label>
+          <textarea id="msgText" required placeholder="Escribinos..."></textarea>
+        </div>
+        <button class="btn yellow" type="submit">ENVIAR MENSAJE →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="wrap">
-    <div class="footer-inner">
+    <div class="footer-grid">
       <div>
-        <a href="#top" class="logo">Panal<span>·</span>Refugio</a>
-        <p class="footer-small">Viernes 13 de noviembre · Elvis</p>
+        <div class="footer-title">PANAL<br>REFUGIO</div>
+        <p style="color:#888">Rock & Pop · Río Cuarto</p>
       </div>
-      <div class="footer-social mono">
-        <a href="https://open.spotify.com/artist/3tyr55a3xt1WssztiQy3VR" target="_blank" rel="noopener">Spotify</a>
-        <a href="https://www.youtube.com/watch?v=oK6flWbdVcQ" target="_blank" rel="noopener">YouTube</a>
-        <a href="https://www.tiktok.com/@REEMPLAZAR" target="_blank" rel="noopener">TikTok</a>
-        <a href="https://instagram.com/REEMPLAZAR" target="_blank" rel="noopener">Instagram</a>
+      <div class="footer-col">
+        <h4>Evento</h4>
+        <p>Viernes 6 de noviembre de 2026</p>
+        <p>Elvis · Alvear y Colón</p>
+        <p>Río Cuarto, Córdoba</p>
+      </div>
+      <div class="footer-col">
+        <h4>Entradas</h4>
+        <p>Valor individual: $15.000</p>
+        <p>Alias: panalrefugio2026</p>
+        <p>Titular: Nelson Mariano Dominguez</p>
       </div>
     </div>
-    <p class="footer-small">© 2026 Panal Refugio.</p>
+    <div class="copyright">© 2026 Panal Refugio · panalrefugio.com.ar</div>
   </div>
 </footer>
 
+<div class="modal" id="orderModal">
+  <div class="modal-box">
+    <button class="close" id="closeModal" aria-label="Cerrar">×</button>
+    <p class="eyebrow">Pedido creado</p>
+    <h3>Guardá este código.</h3>
+    <div class="order-code" id="orderCode">P-00000</div>
+    <p id="orderSummary" style="color:#ddd"></p>
+    <div style="padding:15px;background:#080806;border-left:3px solid var(--yellow);margin-top:20px">
+      <b style="color:var(--yellow)">Próximo paso</b>
+      <p class="modal-note">
+        Transferí el importe al alias <b>panalrefugio2026</b>. En la versión conectada al CRM,
+        desde este pedido se podrá cargar el comprobante, validar el pago y generar el QR individual.
+      </p>
+    </div>
+    <button class="btn outline" id="copyCode" style="margin-top:18px">COPIAR CÓDIGO</button>
+  </div>
+</div>
+
 <script>
-  // Menú mobile
-  const menuBtn = document.getElementById('menuBtn');
-  const navLinks = document.getElementById('navLinks');
-  menuBtn.addEventListener('click', () => {
-    const isOpen = navLinks.classList.toggle('open');
-    menuBtn.setAttribute('aria-expanded', isOpen);
-  });
-  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    navLinks.classList.remove('open');
-    menuBtn.setAttribute('aria-expanded', 'false');
-  }));
+/* ============================================================
+   PANAL REFUGIO — FRONTEND / PROTOTIPO
+   La lógica real de pagos, CRM, WhatsApp, emails y validación
+   de QR debe conectarse posteriormente a un backend + base de datos.
+============================================================ */
 
-  // Countdown al 13 de noviembre 2026, 21:00 (hora Argentina)
-  // REEMPLAZAR la hora si el show empieza a otra hora
-  const showDate = new Date('2026-11-13T21:00:00-03:00').getTime();
+// Menú
+const menuBtn=document.getElementById('menuBtn');
+const navLinks=document.getElementById('navLinks');
+menuBtn.addEventListener('click',()=>{
+  navLinks.classList.toggle('open');
+});
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
 
-  function updateCountdown(){
-    const now = new Date().getTime();
-    const diff = showDate - now;
-    const els = {
-      d: document.getElementById('cd-days'),
-      h: document.getElementById('cd-hours'),
-      m: document.getElementById('cd-mins'),
-      s: document.getElementById('cd-secs')
-    };
-    if(diff <= 0){
-      els.d.textContent = '0'; els.h.textContent = '0'; els.m.textContent = '0'; els.s.textContent = '0';
-      return;
-    }
-    const days = Math.floor(diff / (1000*60*60*24));
-    const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
-    const mins = Math.floor((diff % (1000*60*60)) / (1000*60));
-    const secs = Math.floor((diff % (1000*60)) / 1000);
-    els.d.textContent = days;
-    els.h.textContent = String(hours).padStart(2,'0');
-    els.m.textContent = String(mins).padStart(2,'0');
-    els.s.textContent = String(secs).padStart(2,'0');
+// Fecha del evento: 6 de noviembre de 2026.
+// La hora del show todavía no está fijada en este frontend.
+// El contador apunta al comienzo de ese día para no inventar un horario.
+const eventDate=new Date('2026-11-06T00:00:00-03:00').getTime();
+
+function updateCountdown(){
+  const diff=eventDate-Date.now();
+  if(diff<=0){
+    ['days','hours','mins','secs'].forEach(id=>document.getElementById(id).textContent='0');
+    return;
   }
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
+  document.getElementById('days').textContent=Math.floor(diff/86400000);
+  document.getElementById('hours').textContent=String(Math.floor((diff%86400000)/3600000)).padStart(2,'0');
+  document.getElementById('mins').textContent=String(Math.floor((diff%3600000)/60000)).padStart(2,'0');
+  document.getElementById('secs').textContent=String(Math.floor((diff%60000)/1000)).padStart(2,'0');
+}
+updateCountdown();
+setInterval(updateCountdown,1000);
 
-  // Reveal suave al hacer scroll
-  const revealEls = document.querySelectorAll('section, header');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if(e.isIntersecting){
-        e.target.style.opacity = '1';
-        e.target.style.transform = 'translateY(0)';
-      }
-    });
-  }, {threshold:0.08});
-  revealEls.forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(18px)';
-    el.style.transition = 'opacity .7s ease, transform .7s ease';
-    io.observe(el);
+// Promociones automáticas
+const PROMO_TOTAL=15000;
+
+function getPromo(){
+  const now=new Date();
+  const y=now.getFullYear(), m=now.getMonth()+1, d=now.getDate();
+  // 2026-09-30 inclusive
+  const dateNum=y*10000+m*100+d;
+
+  if(dateNum<=20260930){
+    return {
+      code:'3x1', label:'PROMOCIÓN ACTUAL', number:'3 × 1',
+      text:'3 entradas por el valor de una.',
+      valid:'Promoción válida hasta el 30 de septiembre',
+      pricePerTicket:PROMO_TOTAL/3
+    };
+  }
+  if(dateNum<=20261020){
+    return {
+      code:'2x1', label:'PROMOCIÓN ACTUAL', number:'2 × 1',
+      text:'2 entradas por el valor de una.',
+      valid:'Promoción válida del 1 al 20 de octubre',
+      pricePerTicket:PROMO_TOTAL/2
+    };
+  }
+  return {
+    code:'1x1', label:'ETAPA FINAL', number:'1 × 1',
+    text:'Entrada individual.',
+    valid:'Precio individual desde el 21 de octubre',
+    pricePerTicket:PROMO_TOTAL
+  };
+}
+
+function ticketTotal(qty){
+  const p=getPromo();
+  if(p.code==='3x1') return Math.ceil(qty/3)*PROMO_TOTAL;
+  if(p.code==='2x1') return Math.ceil(qty/2)*PROMO_TOTAL;
+  return qty*PROMO_TOTAL;
+}
+
+function refreshPromo(){
+  const p=getPromo();
+  document.getElementById('promoLabel').textContent=p.label;
+  document.getElementById('promoNumber').textContent=p.number;
+  document.getElementById('promoText').textContent=p.text;
+  document.getElementById('promoValid').textContent=p.valid;
+  refreshTotal();
+}
+
+function refreshTotal(){
+  const qty=Number(document.getElementById('qty').value);
+  const total=ticketTotal(qty);
+  const p=getPromo();
+  document.getElementById('total').textContent='$'+total.toLocaleString('es-AR');
+  document.getElementById('totalLabel').textContent=
+    qty+' entrada'+(qty===1?'':'s')+' · '+p.number;
+}
+document.getElementById('qty').addEventListener('change',refreshTotal);
+refreshPromo();
+
+// Captura automática de vendedor: /entradas?staff=001 o /entradas?ref=juanpablo
+const params=new URLSearchParams(location.search);
+const staff=params.get('staff');
+const ref=params.get('ref');
+const attribution=staff?{type:'staff',code:staff}:ref?{type:'ref',code:ref}:null;
+
+if(attribution){
+  document.getElementById('refBadge').innerHTML =
+    'Venta atribuida a <b style="color:var(--yellow)">'+
+    (attribution.type==='staff'?'STAFF #'+attribution.code:'REF '+attribution.code)+
+    '</b>';
+  localStorage.setItem('panal_attribution',JSON.stringify(attribution));
+}
+
+// Pedido local de demostración
+function makeOrderCode(){
+  const n=Math.floor(10000+Math.random()*90000);
+  return 'P-'+n;
+}
+
+document.getElementById('ticketForm').addEventListener('submit',(e)=>{
+  e.preventDefault();
+  const qty=Number(document.getElementById('qty').value);
+  const order={
+    id:makeOrderCode(),
+    createdAt:new Date().toISOString(),
+    name:document.getElementById('buyerName').value.trim(),
+    phone:document.getElementById('buyerPhone').value.trim(),
+    email:document.getElementById('buyerEmail').value.trim(),
+    qty,
+    promo:getPromo().code,
+    total:ticketTotal(qty),
+    source:document.getElementById('source').value,
+    message:document.getElementById('buyerMessage').value.trim(),
+    attribution:JSON.parse(localStorage.getItem('panal_attribution')||'null'),
+    status:'PENDIENTE DE PAGO'
+  };
+  const orders=JSON.parse(localStorage.getItem('panal_orders')||'[]');
+  orders.push(order);
+  localStorage.setItem('panal_orders',JSON.stringify(orders));
+
+  document.getElementById('orderCode').textContent=order.id;
+  document.getElementById('orderSummary').textContent=
+    order.name+' · '+qty+' entrada'+(qty===1?'':'s')+
+    ' · Total $'+order.total.toLocaleString('es-AR');
+  document.getElementById('orderModal').classList.add('open');
+});
+
+document.getElementById('closeModal').addEventListener('click',()=>{
+  document.getElementById('orderModal').classList.remove('open');
+});
+document.getElementById('copyCode').addEventListener('click',async()=>{
+  try{
+    await navigator.clipboard.writeText(document.getElementById('orderCode').textContent);
+    document.getElementById('copyCode').textContent='CÓDIGO COPIADO ✓';
+  }catch(e){}
+});
+
+// Registro de Staff
+document.getElementById('staffForm').addEventListener('submit',(e)=>{
+  e.preventDefault();
+  const staffList=JSON.parse(localStorage.getItem('panal_staff')||'[]');
+  const id=String(staffList.length+1).padStart(3,'0');
+  const person={
+    id,
+    name:document.getElementById('staffName').value.trim(),
+    phone:document.getElementById('staffPhone').value.trim(),
+    email:document.getElementById('staffEmail').value.trim(),
+    commission:2500,
+    createdAt:new Date().toISOString()
+  };
+  staffList.push(person);
+  localStorage.setItem('panal_staff',JSON.stringify(staffList));
+  const link=location.origin+location.pathname+'?staff='+id+'#comprar';
+  document.getElementById('staffResult').innerHTML=
+    '<div style="padding:16px;background:#090907;border:1px solid var(--line)">'+
+    '<b style="color:var(--yellow)">STAFF #'+id+' — '+person.name+'</b>'+
+    '<p style="font-size:12px;color:#aaa;word-break:break-all;margin-bottom:10px">'+link+'</p>'+
+    '<button class="btn outline" type="button" onclick="navigator.clipboard.writeText(\''+link+'\')">COPIAR LINK</button>'+
+    '</div>';
+});
+
+// Mensaje
+document.getElementById('messageForm').addEventListener('submit',(e)=>{
+  e.preventDefault();
+  const messages=JSON.parse(localStorage.getItem('panal_messages')||'[]');
+  messages.push({
+    name:document.getElementById('msgName').value.trim(),
+    message:document.getElementById('msgText').value.trim(),
+    createdAt:new Date().toISOString()
   });
-  // el header ya está visible al cargar
-  document.querySelector('.hero').style.opacity = '1';
-  document.querySelector('.hero').style.transform = 'translateY(0)';
+  localStorage.setItem('panal_messages',JSON.stringify(messages));
+  e.target.reset();
+  alert('Mensaje guardado. En la versión conectada llegará al panel de Panal.');
+});
 </script>
-
 </body>
 </html>
